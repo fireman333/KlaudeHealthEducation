@@ -9,12 +9,12 @@ sources:
   - title: "NCCN Clinical Practice Guidelines: NSCLC v5.2026"
     url: "https://www.nccn.org/"
     note: "Initial workup、staging、biomarker testing、time-to-treatment 建議"
-  - title: "Time to treatment initiation and survival in NSCLC — National Cancer Database"
-    url: "https://pubmed.ncbi.nlm.nih.gov/32533832/"
-    note: "1.39M 病人，TTI ≤45 天 vs >45 天，median OS 70.2 vs 61.5 個月"
-  - title: "Driver mutations in East Asian never-smoker lung adenocarcinoma"
-    url: "https://pubmed.ncbi.nlm.nih.gov/26149761/"
-    note: "75–87% 帶可標靶 driver mutation，EGFR 為大宗"
+  - title: "Khorana AA et al. Time to initial cancer treatment in the United States and association with survival over time. PLoS One 2019"
+    url: "https://pubmed.ncbi.nlm.nih.gov/30822350/"
+    note: "367 萬人 6 癌種（NSCLC subset 36 萬）；median TTI 21→29 天；增加 TTI 與 stage I/II 肺癌等死亡風險增加（每週絕對風險 +1.2–3.2%）"
+  - title: "Sun Y et al. Lung adenocarcinoma from East Asian never-smokers is a disease largely defined by targetable oncogenic mutant kinases. JCO 2010"
+    url: "https://pubmed.ncbi.nlm.nih.gov/20855837/"
+    note: "外科 N=52，47 個（90%）帶 EGFR/ALK/HER2/KRAS 可標靶突變；EGFR 41 例為大宗"
   - title: "衛福部：90% 肺癌女性不抽菸也罹癌（台灣國際醫療衛生人員訓練中心）"
     url: "https://www.taic.mohw.gov.tw/?aid=302&page_name=detail&iid=631"
   - title: "衛福部國民健康署：肺癌危險因子"
@@ -69,7 +69,7 @@ sources:
 門診排程的現實是：每一項都要等。
 排 PET 等一週、排腦 MRI 等一週、排切片等一週，再等切片病理跟基因檢測結果出來，整套跑完常常要四到六週。
 
-美國真實世界數據看下來，從「懷疑癌症」到「拿到診斷」約 24 天，從「拿到診斷」到「開始治療」再加 22 天，加起來常常將近兩個月[2]。
+美國 NCDB 真實世界資料看下來，從確診到開始治療的中位數約三到四週，部分病人會拖到更久[2]。
 
 住院的好處是把這串排程「包套」。
 醫療團隊會盡量在一週左右把該排的檢查全部排進去，切片排好就送，PET、MRI 全部接力跑。
@@ -82,8 +82,10 @@ sources:
 
 可能有人會想：「拖一兩週應該還好吧？」
 
-美國國家癌症資料庫（NCDB）分析過 139 萬個 NSCLC 病人[2]。
-在切片確診後 45 天內開始治療的這群，**中位整體存活是 70.2 個月**；超過 45 天才開始的，掉到 **61.5 個月**。
+美國國家癌症資料庫（NCDB）追蹤過六個癌種、合計 367 萬個病人，其中肺癌 subset 約 36 萬[2]。
+從確診到開始治療的中位天數，從 21 天慢慢被延長到 29 天。
+
+研究做完發現，stage I 跟 stage II 的肺癌、乳癌、腎癌、胰臟癌這群，**TTI 每多拖一週，死亡風險絕對值上升大約 1.2–3.2%**[2]。
 
 這個差距不是「多拖一週馬上掉幾年」那種戲劇化曲線。
 是慢慢累積、跨大量病人之後，才看得出來的差距。
@@ -159,7 +161,7 @@ NCCN 的立場很清楚[1]：在這群 driver mutation 機率很高的病人身�
 **參考來源**
 
 [1] NCCN Clinical Practice Guidelines: Non-Small Cell Lung Cancer v5.2026.
-[2] Khorana AA et al. Time to initial cancer treatment in the United States. *Cancer*. 2019. (NCDB 1.39M NSCLC analysis, TTI ≤45 vs >45 days, median OS 70.2 vs 61.5 mo)
+[2] Khorana AA et al. Time to initial cancer treatment in the United States and association with survival over time: an observational study. *PLoS One*. 2019. (NCDB N=3,672,561 across 6 cancers; NSCLC subset 363,863; median TTI 21→29 d; absolute mortality risk +1.2–3.2% per week increased TTI in stage I/II breast, lung, renal, pancreas)
 [3] 衛生福利部國際醫療衛生人員訓練中心新聞稿：90% 肺癌女性不抽菸也罹癌。
-[4] Sun Y et al. Lung adenocarcinoma from East Asian never-smokers — comprehensive driver mutation analysis (75–87% targetable kinase alterations).
+[4] Sun Y et al. Lung adenocarcinoma from East Asian never-smokers is a disease largely defined by targetable oncogenic mutant kinases. *J Clin Oncol*. 2010;28(30):4616–20. (N=52 surgical series; 47/52 = 90% targetable kinase mutations; EGFR 41 cases the dominant driver)
 [5] 衛生福利部：第三代標靶藥 osimertinib 成分藥品健保 10 月起擴大給付。
