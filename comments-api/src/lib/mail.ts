@@ -1,19 +1,24 @@
 /**
- * MailChannels — free email send for Cloudflare Workers.
- * https://api.mailchannels.net/tx/v1/documentation
+ * Resend — transactional email send for Cloudflare Workers.
+ * https://resend.com/docs/api-reference/emails/send-email
  *
  * Two helpers:
  *   sendNewCommentEmail — admin notification when a new comment lands
  *   sendMagicLinkEmail  — admin login flow
  *
  * Both are best-effort — never throw to caller; log + return false instead.
- * For better Gmail deliverability, configure SPF / DKIM on the Worker
- * domain (out of code's hands).
+ *
+ * Free-tier constraints (no domain verification):
+ *   - `from` must be at @resend.dev (we use the canonical onboarding@resend.dev)
+ *   - `to` must be the verified Resend account email (i.e. ADMIN_EMAILS entries)
+ *
+ * Migrated from MailChannels on 2026-05-10 after MailChannels began
+ * 401-rejecting unauthenticated workers.dev senders (June 2024 policy).
  */
 import type { Env } from '../types';
 
-const FROM_EMAIL = 'no-reply@klaude-health.workers.dev';
-const FROM_NAME = '康勞德醫普';
+const RESEND_FROM = '康勞德醫普 <onboarding@resend.dev>';
+const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 
 interface SendOptions {
   to: string;
@@ -23,39 +28,31 @@ interface SendOptions {
 }
 
 async function send(env: Env, opts: SendOptions): Promise<boolean> {
-  const body = {
-    personalizations: [{ to: [{ email: opts.to }] }],
-    from: { email: FROM_EMAIL, name: FROM_NAME },
+  const body: Record<string, unknown> = {
+    from: RESEND_FROM,
+    to: [opts.to],
     subject: opts.subject,
-    content: [
-      { type: 'text/plain', value: opts.text },
-      ...(opts.html ? [{ type: 'text/html', value: opts.html }] : []),
-    ],
+    text: opts.text,
   };
-
-  // DKIM signing (optional) for Gmail trust.
-  if (env.MAILCHANNELS_DKIM_PRIVATE_KEY) {
-    Object.assign(body.personalizations[0]!, {
-      dkim_domain: 'klaude-health.workers.dev',
-      dkim_selector: 'mailchannels',
-      dkim_private_key: env.MAILCHANNELS_DKIM_PRIVATE_KEY,
-    });
-  }
+  if (opts.html) body.html = opts.html;
 
   try {
-    const res = await fetch('https://api.mailchannels.net/tx/v1/send', {
+    const res = await fetch(RESEND_ENDPOINT, {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(body),
     });
     if (!res.ok) {
       const text = await res.text();
-      console.error('MailChannels send failed', res.status, text);
+      console.error('Resend send failed', res.status, text);
       return false;
     }
     return true;
   } catch (err) {
-    console.error('MailChannels exception', err);
+    console.error('Resend exception', err);
     return false;
   }
 }

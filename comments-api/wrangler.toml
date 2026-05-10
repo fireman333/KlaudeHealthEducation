@@ -28,7 +28,7 @@ MAGIC_LINK_TTL_MIN = "10"
 #   wrangler secret put TURNSTILE_SECRET_KEY
 #   wrangler secret put MAGIC_LINK_HMAC_SECRET
 #   wrangler secret put IP_HASH_SALT
-#   wrangler secret put MAILCHANNELS_DKIM_PRIVATE_KEY  # optional, improves Gmail deliverability
+#   wrangler secret put RESEND_API_KEY  # https://resend.com (free 3000/mo to your registered email)
 
 # Cron — daily tick at 00:00 UTC (currently no-op; see src/lib/cron.ts)
 [triggers]

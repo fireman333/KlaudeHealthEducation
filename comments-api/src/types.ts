@@ -21,7 +21,7 @@ export interface Env {
   TURNSTILE_SECRET_KEY: string;
   MAGIC_LINK_HMAC_SECRET: string;
   IP_HASH_SALT: string;
-  MAILCHANNELS_DKIM_PRIVATE_KEY?: string;
+  RESEND_API_KEY: string;
 }
 
 export type CommentStatus = 'hold' | 'approved' | 'rejected';
