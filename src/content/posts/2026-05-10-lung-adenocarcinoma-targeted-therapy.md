@@ -3,7 +3,7 @@ title: "肺腺癌如果有「靶子」可以打，就先別急著化療"
 date: 2026-05-10
 categories: [腫瘤科, 胸腔科]
 tags: [肺癌, 標靶治療, 精準醫療, NCCN]
-summary: "NCCN v3.2026 明確建議：晚期肺腺癌只要驗到 driver mutation，第一線就用標靶，不論 PD-L1 高低。先做基因檢測再開始治療，整體存活反而更好。"
+summary: "美國 NCCN 指引 v3.2026 明確建議：晚期肺腺癌只要驗到致癌驅動基因突變（driver mutation），第一線就用標靶治療，不論 PD-L1（程式性死亡配體 1）表現量高低。先做基因檢測再開始治療，整體存活反而更好。"
 sources:
   - title: "NCCN Clinical Practice Guidelines: Non-Small Cell Lung Cancer v3.2026"
     url: "https://www.nccn.org/professionals/physician_gls/pdf/nscl.pdf"
@@ -63,25 +63,25 @@ carousel:
 
 過去十年，肺腺癌已經找出快十種「可以打」的靶點，包括：
 
-- EGFR（最常見，台灣不吸菸女性大約一半都是）
-- ALK
-- ROS1
+- EGFR（表皮生長因子受體，epidermal growth factor receptor；最常見，台灣不吸菸女性大約一半都是）
+- ALK（間變性淋巴瘤激酶，anaplastic lymphoma kinase）
+- ROS1（ROS 受體酪胺酸激酶）
 - BRAF V600E
 - RET
 - MET exon 14
-- NTRK、HER2 等
+- NTRK、HER2（人類表皮生長因子受體 2）等
 
 只要你的腫瘤切片送去做基因檢測，發現有其中一種，就有對應的口服標靶藥。
 而且這些藥在第一線，**幾乎都打贏化療**。
 
 ---
 
-## NCCN 怎麼說？
+## 美國 NCCN 指引怎麼說？
 
 這不是我自己的偏好，是國際治療指引的共識。
 
-美國 NCCN 第 3.2026 版的 NSCLC 指引白紙黑字寫著：
-**「對於有特定致癌驅動基因（oncogenic driver）的晚期或轉移性非小細胞肺癌，第一線應該選擇標靶治療，與 PD-L1 表現量高低無關。」**
+美國 NCCN（National Comprehensive Cancer Network，國家綜合癌症網路）第 3.2026 版的非小細胞肺癌（non-small cell lung cancer, NSCLC）指引白紙黑字寫著：
+**「對於有特定致癌驅動基因（oncogenic driver）的晚期或轉移性非小細胞肺癌，第一線應該選擇標靶治療，與 PD-L1（programmed death-ligand 1，程式性死亡配體 1）表現量高低無關。」**
 
 這句話有兩個重點：
 1. **第一線就用，不要拖到第二線**
@@ -135,7 +135,7 @@ CROWN 研究追了 5 年：
 而且標靶藥對腦部轉移特別有效。
 肺腺癌很容易跑到腦袋裡，化療進不太去，免疫療法也進不太去。
 **新一代標靶藥可以穿過血腦屏障**，這是 NCCN 特別強調的優勢。
-CROWN 研究裡，lorlatinib 控制腦轉移的效果是對照組的 17 倍（hazard ratio 0.06）。
+CROWN 研究裡，lorlatinib 控制腦轉移的效果是對照組的 17 倍（風險比 hazard ratio 0.06，數字越小代表 lorlatinib 把腦轉移風險壓得越低）。
 ALK 病人裡，腦部腫瘤完全消失的比例高達 71%。
 
 ---
