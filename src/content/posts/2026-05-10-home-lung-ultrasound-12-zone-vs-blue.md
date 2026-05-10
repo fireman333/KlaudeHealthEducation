@@ -35,6 +35,23 @@ sources:
   - title: "NICE Evidence Review A — Diagnostic accuracy of lung ultrasound compared to chest X-ray for diagnosing pneumonia (NICE Guideline NG250)"
     url: "https://www.ncbi.nlm.nih.gov/books/NBK618764/"
     note: "英國 NICE 2025/09 同主題實證審查；獨立評估、結論與 ATS 一致"
+carousel:
+  - src: "/img/posts/2026-05-10-12-zone/01-hook.png"
+    alt: "封面：在宅幫長輩診斷肺炎，12 區比 BLUE protocol 更適合"
+    caption: "Slide 1 — 為什麼在宅長輩用 12 區更好"
+    threads_text: "〈衛教筆記〉BLUE protocol 是 Lichtenstein 在 ICU 設計的 3 分鐘急救流程，主要看前胸 6 點。\n\n12-zone 是門診 / 在宅用的 12 點掃描，含後背。\n\n在宅長輩肺炎多落在後背，3 分鐘看完前胸不會夠。\n\n4 張圖帶你看完 👇"
+  - src: "/img/posts/2026-05-10-12-zone/02-data.png"
+    alt: "診斷力對照：BLUE sens 89%/spec 94%（ICU N=260）vs 12-zone sens 88%/spec 100% AUC 0.97（門診/社區）"
+    caption: "Slide 2 — 兩個 protocol 的診斷力"
+    threads_text: "診斷力對照：\n\nBLUE protocol（ICU 急性呼吸衰竭 N=260）— sens 89% / spec 94%\n\n12-zone（門診 / 社區）— sens 88% / spec 100%、AUC 0.97\n\nATS 2025 指引已將肺超音波列為合理替代 CXR 的影像方法。"
+  - src: "/img/posts/2026-05-10-12-zone/03-coverage.png"
+    alt: "覆蓋範圍：BLUE 6 個前胸點 / 3 分鐘 vs 12-zone 12 個點含後背 / 10–15 分鐘"
+    caption: "Slide 3 — 覆蓋範圍對照"
+    threads_text: "覆蓋範圍對照：\n\nBLUE protocol — 6 個前胸點 / 3 分鐘 / ICU 急救流程\n\n12-zone — 12 個點含後背 / 10–15 分鐘 / 門診 + 在宅\n\n衰弱長輩臥床、肺炎多落後背 → 12 區不會漏。"
+  - src: "/img/posts/2026-05-10-12-zone/04-takeaway.png"
+    alt: "Take-home：BLUE 是 ICU 急救趕時間用、12-zone 適合在宅/長輩、ATS 已將 LUS 列為合理替代 CXR"
+    caption: "Slide 4 — Take-home 與 CTA"
+    threads_text: "Take-home：\n\n1. BLUE 是 ICU 急救流程設計、適合趕時間\n2. 12-zone 適合在宅 / 護理之家 / 衰弱長輩，不漏後背肺炎\n3. ATS 2025 已將 LUS 列為合理替代 CXR、健保居家醫療 2016 起給付涵蓋\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-10-home-lung-ultrasound-12-zone-vs-blue/\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。\n\n#康勞德醫普 #肺炎 #肺超音波 #在宅醫療"
 ---
 
 > 以下開場為**虛構合成的訪視情境**，目的是把讀者帶進議題，非任何真實病人。

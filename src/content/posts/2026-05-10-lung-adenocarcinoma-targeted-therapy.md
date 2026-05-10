@@ -18,6 +18,23 @@ sources:
     url: "https://www.cancer.gov/news-events/cancer-currents-blog/2024/lorlatinib-alk-positive-lung-cancer-initial-treatment"
   - title: "FLAURA2 OS update, IASLC press release"
     url: "https://www.iaslc.org/iaslc-news/press-release/flaura2-trial-shows-osimertinib-plus-chemotherapy-improves-overall"
+carousel:
+  - src: "/img/posts/2026-05-10-lung-adenocarcinoma/01-hook.png"
+    alt: "封面：肺腺癌如果有靶子可以打，就先別急著化療"
+    caption: "Slide 1 — driver-positive NSCLC 的核心原則"
+    threads_text: "〈衛教筆記〉肺腺癌如果有「靶子」可以打，就先別急著化療。\n\nNCCN NSCLC v3.2026 明確建議：晚期肺腺癌只要驗到 driver mutation，第一線就用標靶（不論 PD-L1 高低）。\n\n4 張圖帶你看完 👇"
+  - src: "/img/posts/2026-05-10-lung-adenocarcinoma/02-data.png"
+    alt: "FLAURA mPFS 18.9 vs 10.2 月 / FLAURA2 osimertinib+chemo mPFS 25.5 vs 16.7 月"
+    caption: "Slide 2 — FLAURA + FLAURA2 第三代 EGFR 標靶"
+    threads_text: "FLAURA：osimertinib mPFS 18.9 月 vs 標準 EGFR-TKI 10.2 月。\n\nFLAURA2：osimertinib + 化療 mPFS 25.5 月 vs osimertinib 單藥 16.7 月。\n\n驗到 driver mutation → 第一線標靶優先（NCCN NSCLC v3.2026）。"
+  - src: "/img/posts/2026-05-10-lung-adenocarcinoma/03-mechanism.png"
+    alt: "亞洲肺腺癌特殊性：90% 不抽菸 → 80–90% 帶 driver mutation 可標靶（EGFR/ALK/ROS1/HER2）"
+    caption: "Slide 3 — 為什麼亞洲肺腺癌特別適合驗 NGS"
+    threads_text: "為什麼亞洲肺腺癌特別適合驗 NGS：\n\n亞洲女性肺癌 90% 不抽菸，但 80–90% 帶 driver mutation 可標靶（EGFR / ALK / ROS1 / HER2）。\n\n鎖跟鑰匙的差別 — 化療是撒網、標靶是狙擊。"
+  - src: "/img/posts/2026-05-10-lung-adenocarcinoma/04-takeaway.png"
+    alt: "Take-home：1 先驗 NGS / 2 driver+ 第一線標靶不論 PD-L1 / 3 osimertinib 健保 2024/10 擴大給付"
+    caption: "Slide 4 — Take-home 與 CTA"
+    threads_text: "Take-home：\n\n1. 晚期肺腺癌診斷後第一件事是驗 NGS（健保 2024/5 起已給付）\n2. 驗到 driver mutation → 第一線就用標靶、不論 PD-L1\n3. Osimertinib 健保 2024/10 起擴大給付（第三代 EGFR 標靶）\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-10-lung-adenocarcinoma-targeted-therapy/\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。\n\n#康勞德醫普 #肺腺癌 #標靶治療 #NCCN"
 ---
 
 > 以下開場為**虛構合成的門診情境**，目的是把讀者帶進議題，非任何真實病人。

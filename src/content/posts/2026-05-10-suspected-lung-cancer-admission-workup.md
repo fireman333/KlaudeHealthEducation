@@ -21,6 +21,23 @@ sources:
     url: "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4053"
   - title: "衛福部：osimertinib 健保 10 月起擴大給付（第三代 EGFR 標靶）"
     url: "https://www.mohw.gov.tw/cp-16-80274-1.html"
+carousel:
+  - src: "/img/posts/2026-05-10-suspected-lung-cancer/01-hook.png"
+    alt: "封面：醫師說「下週住院」不一定是末期，肺腺癌住院檢查的真正用意"
+    caption: "Slide 1 — 住院動機常被誤讀"
+    threads_text: "〈衛教筆記〉「醫師說下週馬上住院」不一定是末期。\n\nNCCN 沒有強制肺腺癌一定要住院做檢查。實務上會建議住院，多半是為了 1 週內把 CT、PET、MRI、切片、NGS 一次跑齊。\n\n跟「病情有沒有很差」是兩回事。\n\n4 張圖帶你看完 👇"
+  - src: "/img/posts/2026-05-10-suspected-lung-cancer/02-data.png"
+    alt: "TTI 對比：門診 4–6 週 vs 住院 1 週；拖一週 stage I/II 死亡風險每週 +1.2–3.2%"
+    caption: "Slide 2 — TTI 拖延的代價"
+    threads_text: "TTI（Time to Initial Treatment）的代價：\n\n門診排檢查通常 4–6 週；住院 1 週塞完。\n\n拖一週 stage I / II 肺癌死亡風險每週 +1.2–3.2%（Khorana PLoS One 2019, NSCLC subset N=36 萬）。"
+  - src: "/img/posts/2026-05-10-suspected-lung-cancer/03-workup.png"
+    alt: "住院 1 週做的 5 件事：CT 分期 / PET-CT / 腦 MRI / 切片+NGS / 多科會議+治療開始"
+    caption: "Slide 3 — 住院 1 週做的 5 件事"
+    threads_text: "住院 1 週做的 5 件事：\n\n(1) 全身 CT 分期\n(2) PET-CT\n(3) 腦部 MRI\n(4) 切片 / NGS 採檢\n(5) 多科共識會議 + 治療開始\n\nNCCN 沒強制住院，但 1 週塞檢查比門診跑 4–6 週快很多。"
+  - src: "/img/posts/2026-05-10-suspected-lung-cancer/04-takeaway.png"
+    alt: "Take-home：NCCN 沒強制住院 / 90% 女性肺癌不抽菸必驗 NGS / 健保 NGS + osimertinib 已擴大給付"
+    caption: "Slide 4 — Take-home 與 CTA"
+    threads_text: "Take-home：\n\n1. NCCN 沒強制肺腺癌一定住院（住院多半是為了 1 週把檢查跑齊）\n2. 90% 女性肺癌不抽菸、必驗 NGS\n3. 健保 2024/5 起 NGS 已給付、osimertinib 2024/10 擴大給付\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-10-suspected-lung-cancer-admission-workup/\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。\n\n#康勞德醫普 #肺腺癌 #肺癌 #NCCN"
 ---
 
 > 以下開場為**虛構合成的門診情境**，目的是把讀者帶進議題，非任何真實病人。
