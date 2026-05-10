@@ -1,7 +1,7 @@
 ---
 title: "肺腺癌如果有「靶子」可以打，就先別急著化療"
 date: 2026-05-10
-categories: [腫瘤科]
+categories: [腫瘤科, 胸腔科]
 tags: [肺癌, 標靶治療, 精準醫療, NCCN]
 summary: "NCCN v3.2026 明確建議：晚期肺腺癌只要驗到 driver mutation，第一線就用標靶，不論 PD-L1 高低。先做基因檢測再開始治療，整體存活反而更好。"
 sources:
