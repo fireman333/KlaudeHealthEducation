@@ -97,12 +97,12 @@ sources:
 
 ## 不抽菸的女性更需要把切片做齊
 
-衛福部國民健康署的資料顯示，**90% 以上的台灣女性肺癌患者並沒有抽菸**[3]。
+衛福部資料顯示，**90% 以上的台灣女性肺癌患者並沒有抽菸**[4]。
 台灣不抽菸亞洲女性的肺腺癌，跟歐美吸菸者的肺腺癌，是不太一樣的兩件事。
 
 亞洲不抽菸女性的肺腺癌，腫瘤裡常常帶著一個「可以打的弱點」。
 
-文獻上看下來，這個族群的肺腺癌大約有 **七到八成** 至少帶一個可標靶的驅動基因突變（driver mutation）[4]。
+文獻上看下來，這個族群的肺腺癌大約有 **七到八成** 至少帶一個可標靶的驅動基因突變（driver mutation）[3]。
 其中最大宗是 **表皮生長因子受體**（EGFR），單這一個就佔了六成以上。
 其他像 ALK 重組、ROS1、BRAF、HER2、RET 等也都有，加總起來覆蓋掉這個族群絕大多數的肺腺癌。
 
@@ -126,7 +126,7 @@ NCCN 的立場很清楚[1]：在這群 driver mutation 機率很高的病人身�
 理由是：免疫治療（PD-1/PD-L1 抑制劑）跟後續可能用到的 EGFR 標靶藥（如 osimertinib）一起接力時，副作用會疊加。
 特別是肺炎跟肝毒性，可能讓人最後兩種藥都用不下去。
 
-健保現在已經把第三代 EGFR 標靶 osimertinib 一線給付擴大到三 B 跟三 C 期肺腺癌[5]。
+健保現在已經把第三代 EGFR 標靶 osimertinib 一線給付擴大到三 B 跟三 C 期肺腺癌[6]。
 換句話說，等檢測結果出來再開始用藥，不只是學理上的合理，台灣健保也支援這個 sequence。
 
 把檢查跟基因檢測做齊再開始 — 對這個族群來說，不是「拖延」，是「打對招」。
@@ -155,13 +155,3 @@ NCCN 的立場很清楚[1]：在這群 driver mutation 機率很高的病人身�
 ---
 
 > ⚠ 本文為衛教科普，臨床情境為虛構合成。實際治療決策請與您的主治醫師討論。
-
----
-
-**參考來源**
-
-[1] NCCN Clinical Practice Guidelines: Non-Small Cell Lung Cancer v5.2026.
-[2] Khorana AA et al. Time to initial cancer treatment in the United States and association with survival over time: an observational study. *PLoS One*. 2019. (NCDB N=3,672,561 across 6 cancers; NSCLC subset 363,863; median TTI 21→29 d; absolute mortality risk +1.2–3.2% per week increased TTI in stage I/II breast, lung, renal, pancreas)
-[3] 衛生福利部國際醫療衛生人員訓練中心新聞稿：90% 肺癌女性不抽菸也罹癌。
-[4] Sun Y et al. Lung adenocarcinoma from East Asian never-smokers is a disease largely defined by targetable oncogenic mutant kinases. *J Clin Oncol*. 2010;28(30):4616–20. (N=52 surgical series; 47/52 = 90% targetable kinase mutations; EGFR 41 cases the dominant driver)
-[5] 衛生福利部：第三代標靶藥 osimertinib 成分藥品健保 10 月起擴大給付。
