@@ -9,5 +9,5 @@
     }
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "_posts", "_site"]
+  "exclude": ["dist", "_posts", "_site", "comments-api"]
 }

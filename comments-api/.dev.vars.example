@@ -1,0 +1,19 @@
+# Local dev secrets for `wrangler dev` (NEVER commit).
+# Copy to .dev.vars and fill in values.
+
+# Cloudflare Turnstile — for local dev, use the always-passes test key:
+#   1x0000000000000000000000000000000AA  (always passes)
+# Production: create site at https://dash.cloudflare.com/turnstile and use real secret
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+
+# Random hex string used to sign / verify HMAC if needed (currently unused
+# but reserved for future). Generate with: openssl rand -hex 32
+MAGIC_LINK_HMAC_SECRET=replace_with_openssl_rand_hex_32
+
+# Daily-rotating IP hash salt. Generate fresh with: openssl rand -hex 16
+IP_HASH_SALT=replace_with_openssl_rand_hex_16
+
+# (Optional) DKIM private key for MailChannels — improves Gmail deliverability.
+# See: https://blog.cloudflare.com/sending-email-from-workers-with-mailchannels/
+# Leave blank for v2 first deploy; add later if Gmail starts marking spam.
+# MAILCHANNELS_DKIM_PRIVATE_KEY=

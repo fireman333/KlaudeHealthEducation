@@ -16,3 +16,13 @@ export const NAV = [
   { href: '/about/', label: '關於' },
   { href: '/feed.xml', label: 'RSS' },
 ] as const;
+
+// v2 留言板 settings (read at build time from PUBLIC_* env vars)
+// Both default to Cloudflare's "always-passes" test values for local dev,
+// so `pnpm dev` and `pnpm build` work without configuration. Real values
+// are injected via GH Actions secrets in production.
+export const COMMENTS = {
+  apiBase: import.meta.env.PUBLIC_COMMENTS_API ?? 'http://localhost:8787',
+  turnstileSiteKey:
+    import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA',
+} as const;

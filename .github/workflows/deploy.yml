@@ -40,6 +40,14 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
+          # v2 留言板 — set these as repo Variables (Settings → Secrets and
+          # variables → Actions → Variables tab) so they're injected at
+          # build time. Leaving them unset falls back to local-dev defaults
+          # in src/config.ts (Turnstile always-passes test key + localhost
+          # API), which keeps Pages renderable even before the v2 backend
+          # is deployed.
+          PUBLIC_COMMENTS_API: ${{ vars.PUBLIC_COMMENTS_API }}
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

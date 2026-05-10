@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { CommentBox } from '@/components/react/CommentBox';
+import { COMMENTS } from '@/config';
 
 interface Source {
   title: string;
@@ -17,9 +19,10 @@ interface Props {
     sources: Source[];
     description?: string;
   };
+  slug: string;
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, slug } = Astro.props;
 const { title, date, summary, categories, sources, description } = frontmatter;
 
 const dateStr = date.toISOString().slice(0, 10);
@@ -68,5 +71,12 @@ function categoryHref(c: string): string {
         </ol>
       </section>
     )}
+
+    <CommentBox
+      client:idle
+      slug={slug}
+      apiBase={COMMENTS.apiBase}
+      turnstileSiteKey={COMMENTS.turnstileSiteKey}
+    />
   </article>
 </BaseLayout>
