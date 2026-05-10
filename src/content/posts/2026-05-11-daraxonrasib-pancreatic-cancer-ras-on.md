@@ -36,7 +36,7 @@ carousel:
   - src: "/img/posts/2026-05-11-daraxonrasib/01-hook.png"
     alt: "封面：胰臟癌 90% 都有 RAS 突變，Daraxonrasib 真的把鎖打開了？"
     caption: "Slide 1 — 為什麼這支藥是大事"
-    threads_text: "〈衛教筆記〉胰臟癌九成以上有 RAS 基因突變，但人類花了四十年才有第一支能跨打多型 RAS 的口服藥。\n\n美國 NCCN（國家綜合癌症網路）2026 年指引的 KRAS 標靶仍只列 sotorasib / adagrasib（限 G12C 突變，占胰臟癌僅 1–2%）。\n\n剩下 88–90% 的 G12D / V / R 病人長期沒對應藥可選。直到 daraxonrasib（RMC-6236）出現。\n\n4 張圖帶你看完 👇"
+    threads_text: "〈康勞德醫普〉胰臟癌九成以上有 RAS 基因突變，但人類花了四十年才有第一支能跨打多型 RAS 的口服藥。\n\n美國 NCCN（國家綜合癌症網路）2026 年指引的 KRAS 標靶仍只列 sotorasib / adagrasib（限 G12C 突變，占胰臟癌僅 1–2%）。\n\n剩下 88–90% 的 G12D / V / R 病人長期沒對應藥可選。直到 daraxonrasib（RMC-6236）出現。\n\n4 張圖帶你看完 👇"
   - src: "/img/posts/2026-05-11-daraxonrasib/02-data.png"
     alt: "Phase 3 RASolute 302：daraxonrasib mOS 13.2 月 vs 化療 6.7 月，HR 0.40"
     caption: "Slide 2 — Phase 3 randomized 對比化療"

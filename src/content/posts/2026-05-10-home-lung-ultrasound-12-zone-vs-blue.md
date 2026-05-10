@@ -39,7 +39,7 @@ carousel:
   - src: "/img/posts/2026-05-10-12-zone/01-hook.png"
     alt: "封面：在宅幫長輩診斷肺炎，12 區比 BLUE protocol 更適合"
     caption: "Slide 1 — 為什麼在宅長輩用 12 區更好"
-    threads_text: "〈衛教筆記〉BLUE protocol 是 Lichtenstein 在 ICU 設計的 3 分鐘急救流程，主要看前胸 6 點。\n\n12-zone 是門診 / 在宅用的 12 點掃描，含後背。\n\n在宅長輩肺炎多落在後背，3 分鐘看完前胸不會夠。\n\n4 張圖帶你看完 👇"
+    threads_text: "〈康勞德醫普〉BLUE protocol 是 Lichtenstein 在 ICU 設計的 3 分鐘急救流程，主要看前胸 6 點。\n\n12-zone 是門診 / 在宅用的 12 點掃描，含後背。\n\n在宅長輩肺炎多落在後背，3 分鐘看完前胸不會夠。\n\n4 張圖帶你看完 👇"
   - src: "/img/posts/2026-05-10-12-zone/02-data.png"
     alt: "診斷力對照：BLUE sens 89%/spec 94%（ICU N=260）vs 12-zone sens 88%/spec 100% AUC 0.97（門診/社區）"
     caption: "Slide 2 — 兩個 protocol 的診斷力"

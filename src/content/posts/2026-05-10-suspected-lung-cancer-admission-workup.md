@@ -26,7 +26,7 @@ carousel:
   - src: "/img/posts/2026-05-10-suspected-lung-cancer/01-hook.png"
     alt: "封面：醫師說「下週住院」不一定是末期，肺腺癌住院檢查的真正用意"
     caption: "Slide 1 — 住院動機常被誤讀"
-    threads_text: "〈衛教筆記〉「醫師說下週馬上住院」不一定是末期。\n\nNCCN 沒有強制肺腺癌一定要住院做檢查。實務上會建議住院，多半是為了 1 週內把 CT、PET、MRI、切片、NGS 一次跑齊。\n\n跟「病情有沒有很差」是兩回事。\n\n4 張圖帶你看完 👇"
+    threads_text: "〈康勞德醫普〉「醫師說下週馬上住院」不一定是末期。\n\nNCCN 沒有強制肺腺癌一定要住院做檢查。實務上會建議住院，多半是為了 1 週內把 CT、PET、MRI、切片、NGS 一次跑齊。\n\n跟「病情有沒有很差」是兩回事。\n\n4 張圖帶你看完 👇"
   - src: "/img/posts/2026-05-10-suspected-lung-cancer/02-data.png"
     alt: "TTI 對比：門診 4–6 週 vs 住院 1 週；拖一週 stage I/II 死亡風險每週 +1.2–3.2%"
     caption: "Slide 2 — TTI 拖延的代價"

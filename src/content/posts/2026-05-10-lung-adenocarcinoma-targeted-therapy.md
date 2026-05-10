@@ -22,7 +22,7 @@ carousel:
   - src: "/img/posts/2026-05-10-lung-adenocarcinoma/01-hook.png"
     alt: "封面：肺腺癌如果有靶子可以打，就先別急著化療"
     caption: "Slide 1 — driver-positive NSCLC 的核心原則"
-    threads_text: "〈衛教筆記〉肺腺癌如果有「靶子」可以打，就先別急著化療。\n\nNCCN NSCLC v3.2026 明確建議：晚期肺腺癌只要驗到 driver mutation，第一線就用標靶（不論 PD-L1 高低）。\n\n4 張圖帶你看完 👇"
+    threads_text: "〈康勞德醫普〉肺腺癌如果有「靶子」可以打，就先別急著化療。\n\nNCCN NSCLC v3.2026 明確建議：晚期肺腺癌只要驗到 driver mutation，第一線就用標靶（不論 PD-L1 高低）。\n\n4 張圖帶你看完 👇"
   - src: "/img/posts/2026-05-10-lung-adenocarcinoma/02-data.png"
     alt: "FLAURA mPFS 18.9 vs 10.2 月 / FLAURA2 osimertinib+chemo mPFS 25.5 vs 16.7 月"
     caption: "Slide 2 — FLAURA + FLAURA2 第三代 EGFR 標靶"
