@@ -3,7 +3,7 @@ title: "胰臟癌 90% 都有 RAS 突變：Daraxonrasib 是不是把這把鎖真�
 date: 2026-05-11
 categories: [腫瘤科, 肝膽腸胃科, 精準醫療]
 tags: [胰臟癌, RAS, KRAS, 標靶治療, NCCN, daraxonrasib, RMC-6236]
-summary: "胰臟癌九成以上有 RAS 基因突變，但人類四十年來只能打 KRAS G12C 這個約占 1–2% 的小眾。Daraxonrasib 是首個能跨打 G12D/V/R 等多型 RAS 的口服藥；NEJM phase 1–2 第二線 ORR 35%、mOS 13.1 月，phase 3 RASolute 302 已宣告 mOS 13.2 vs 6.7 月（HR 0.40）。NCCN v1.2026 仍未收錄、台灣健保更未給付，但這是這個「癌王」三十年來首次出現對 90% 患者都可能受益的標靶藥物。"
+summary: "胰臟癌九成以上有 RAS 基因突變，但人類四十年來只能打 KRAS G12C 這個約占 1–2% 的小眾。Daraxonrasib 是首個能跨打 G12D/V/R 等多型 RAS 的口服藥；NEJM phase 1–2 第二線「客觀反應率」（ORR）35%、「中位整體存活期」（mOS）13.1 月，phase 3 RASolute 302 已宣告 mOS 13.2 vs 6.7 月、「風險比」（HR）0.40。NCCN v1.2026 仍未收錄、台灣健保更未給付，但這是這個「癌王」三十年來首次出現對 90% 患者都可能受益的標靶藥物。"
 sources:
   - title: "Wolpin BM, Park W, Garrido-Laguna I, et al. — Daraxonrasib in Previously Treated Advanced RAS-Mutated Pancreatic Cancer, N Engl J Med 2026"
     url: "https://pubmed.ncbi.nlm.nih.gov/42090791/"
@@ -29,9 +29,9 @@ sources:
   - title: "衛生福利部 — 健保 5 月 1 日起給付癌症精準醫療 NGS 檢測"
     url: "https://www.mohw.gov.tw/cp-16-78416-1.html"
     note: "胰臟癌列入 NGS 給付癌種；可檢測 KRAS、BRCA、HER2、MSI 等 actionable target，給付分 BRCA 1 萬點 / 小套組 2 萬點 / 大套組 3 萬點"
-  - title: "健康九九網站（國民健康署）— 菸酒胰臟癌提早 10 年報到"
-    url: "https://health99.hpa.gov.tw/news/10343"
-    note: "台灣國健署 patient-facing 衛教：抽菸喝酒、肥胖、糖尿病、慢性胰臟炎、家族史皆為胰臟癌風險因子；近 5 年罹病人數增加約 5 成、5 年存活率僅 10%"
+  - title: "臺大醫院公共事務室 — 爭取「胰腺」生機：胰臟癌精準醫療早期診斷與個人化精準醫療，臺大醫院健康電子報 2024/04"
+    url: "https://epaper.ntuh.gov.tw/health/202405/special_3_1.html"
+    note: "台灣醫學中心 patient-facing 衛教：胰臟癌是「癌中之王」、診斷時 80–85% 已為局部晚期或轉移性疾病、整體 5 年存活率仍偏低；強調精準醫療與多專科團隊整合"
 carousel:
   - src: "/img/posts/2026-05-11-daraxonrasib/01-hook.png"
     alt: "封面：胰臟癌 90% 都有 RAS 突變，Daraxonrasib 真的把鎖打開了？"
@@ -63,9 +63,9 @@ carousel:
 
 ## 為什麼胰臟癌叫「癌王」
 
-台灣國民健康署的數字直白得像一巴掌打在臉上：胰臟癌近 5 年罹病人數增加約 5 成，**5 年存活率僅 10%**[9]。臺大醫院腫瘤醫學部楊士弘醫師在健康電子報寫得很清楚：胰臟癌之所以難治，是因為早期幾乎沒症狀，**發現時多半已是中晚期**，腫瘤又喜歡黏在大血管旁、容易擴散到肝臟與腹腔[6]。
+臺大醫院 2024 年 4 月衛教電子報的數字直白得像一巴掌打在臉上：胰臟癌**整體 5 年存活率僅 10%**、且診斷時 80–85% 已是局部晚期或轉移性[9]。臺大醫院腫瘤醫學部楊士弘醫師在健康電子報寫得很清楚：胰臟癌之所以難治，是因為早期幾乎沒症狀，**發現時多半已是中晚期**，腫瘤又喜歡黏在大血管旁、容易擴散到肝臟與腹腔[6]。
 
-抽菸、喝酒、肥胖、糖尿病、慢性胰臟炎、家族史都是已知風險因子[9]。但即使戒了菸、控制好血糖，胰臟癌還是會找上沒有任何危險因子的人。
+抽菸、喝酒、肥胖、糖尿病、慢性胰臟炎、家族史都是已知風險因子（NCCN 胰臟腺癌指引納入 cancer risk assessment 章節）[2]。但即使戒了菸、控制好血糖，胰臟癌還是會找上沒有任何危險因子的人。
 
 過去三十年國際上最大的躍進，是把第一線化療從單藥 gemcitabine 一路升級到 FOLFIRINOX、白蛋白結合型 paclitaxel + gemcitabine（Gem-Nab）、NALIRIFOX 這類組合療法[2]。**台灣自己也走出一條路**：國家衛生研究院主導的 SLOG 配方（S-1 + leucovorin + oxaliplatin + gemcitabine），轉移性胰臟癌中位整體存活期推進到 11.4 個月，登上 *Lancet*[7]。
 
@@ -113,7 +113,7 @@ Daraxonrasib（研發代號 RMC-6236）是 Revolution Medicines 開發的口服�
 
 換個比喻：**過去的 G12C 抑制劑像是配了一把專屬鑰匙，只能開一種鎖；daraxonrasib 像是萬用鑰匙，能轉開大多數型號的 RAS 鎖頭**。但「萬用」也意味著它連野生型 RAS 都會抑制——這帶來副作用上的代價（後面會講）。
 
-## NEJM 試驗結果：第二線 ORR 35%、mOS 13.1 月
+## NEJM 試驗結果：第二線客觀反應率 35%、中位存活期 13.1 月
 
 這篇 5/7 刊登在 *NEJM* 的研究是 RMC-6236-001 phase 1–2 試驗（NCT05379985）的胰臟癌部分結果[1]。
 
@@ -125,10 +125,10 @@ Daraxonrasib（研發代號 RMC-6236）是 Revolution Medicines 開發的口服�
 
 **療效（300 mg、第二線、RAS G12 突變子群 n = 26）**[1]：
 
-- 客觀反應率（ORR） **35%**（95% CI 17–56）
-- 中位反應持續時間 **8.2 個月**
-- 中位無惡化存活期（PFS） **8.5 個月**
-- **中位整體存活期（OS）13.1 個月**
+- 客觀反應率（objective response rate, ORR） **35%**（95% 信賴區間 17–56）
+- 中位反應持續時間（median duration of response, mDOR） **8.2 個月**
+- 中位無惡化存活期（median progression-free survival, mPFS） **8.5 個月**
+- **中位整體存活期（median overall survival, mOS）13.1 個月**
 
 涵蓋 G12 / G13 / Q61 全部 RAS 突變子群（n = 38）：ORR 29%、mOS 15.6 個月[1]。
 
@@ -143,14 +143,14 @@ Daraxonrasib（研發代號 RMC-6236）是 Revolution Medicines 開發的口服�
 
 副作用其實不算「乾淨」——皮膚跟 GI 反應發生率很高（這是 RAS pathway 抑制的 class effect）[1]。但 Grade ≥3 級「只」30%、且沒人因此停藥，對胰臟癌轉移性二線族群來說已是可接受的風險換益處。
 
-## Phase 3 RASolute 302 已 readout：mOS 13.2 vs 6.7 月
+## Phase 3 RASolute 302 已 readout：中位存活期 13.2 vs 6.7 月
 
-NEJM 的 phase 1–2 是單臂試驗，本質上不能跟化療對手「公平比較」。所以醫界一直在等 phase 3 randomized RASolute 302（NCT06625320）——daraxonrasib **隨機分組**對比研究者選擇的 standard-of-care 化療[4]。
+NEJM 的 phase 1–2 是單臂試驗，本質上不能跟化療對手「公平比較」。所以醫界一直在等 phase 3 隨機分組試驗 RASolute 302（NCT06625320）——daraxonrasib **隨機分組**對比研究者選擇的標準化療[4]。
 
-2026 年 4 月底，Revolution Medicines 釋出 phase 3 topline 結果[3]：
+2026 年 4 月底，Revolution Medicines 釋出 phase 3 主要結果[3]：
 
-- 全意向治療族群中位 OS **13.2 月** vs 化療 **6.7 月**
-- HR **0.40**（p < 0.0001）
+- 全意向治療族群中位整體存活期 mOS **13.2 月** vs 化療 **6.7 月**
+- 風險比（hazard ratio, HR） **0.40**（p < 0.0001，統計上達顯著差異）
 - 安全性與 phase 1–2 一致，沒有新的安全訊號
 
 **翻譯成白話：在隨機分組對比下，daraxonrasib 把死亡風險降低了 60%**。這是胰臟癌轉移性第二線三十年來最大幅度的存活期改善之一。
@@ -187,5 +187,5 @@ NCCN Pancreatic Adenocarcinoma v1.2026 的「Useful in Certain Circumstances」K
 ## Take-home
 
 1. **胰臟癌九成以上有 RAS 基因突變，但過去四十年只有 1–2% 的 G12C 有對應標靶藥；daraxonrasib 是首個能跨打 G12D/V/R 等多型 RAS 的口服藥**[1][5]
-2. **NEJM phase 1–2 在第二線給出 ORR 35%、mOS 13.1 月，phase 3 RASolute 302 已宣告 mOS 13.2 vs 6.7 月、HR 0.40**——這是這個癌王三十年最大躍進之一[1][3]
+2. **NEJM phase 1–2 在第二線給出客觀反應率 ORR 35%、中位整體存活期 mOS 13.1 月；phase 3 RASolute 302 已宣告 mOS 13.2 vs 6.7 月、風險比 HR 0.40（死亡風險降 60%）**——這是這個癌王三十年最大躍進之一[1][3]
 3. **NCCN v1.2026 還沒收錄 daraxonrasib、台灣健保也還沒給付**，但 NGS 基因檢測已列入健保給付，先驗 RAS 突變類型、跟主治醫師討論臨床試驗，是現在病人能做的最具體準備[2][8]
