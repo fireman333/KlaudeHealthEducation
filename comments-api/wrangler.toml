@@ -1,0 +1,39 @@
+name = "klaude-comments"
+main = "src/index.ts"
+compatibility_date = "2026-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 binding — replace database_id after running:
+#   wrangler d1 create klaude-comments-db
+[[d1_databases]]
+binding = "DB"
+database_name = "klaude-comments-db"
+database_id = "9bd069a4-91fb-4443-904a-71b7d9553629"
+migrations_dir = "migrations"
+
+# Workers AI binding for PHI detection (free tier 10k req/day)
+[ai]
+binding = "AI"
+
+# Public env vars (available at runtime via env.X)
+[vars]
+ADMIN_EMAILS = "tony85314@gmail.com"
+ALLOWED_ORIGINS = "https://fireman333.github.io,http://localhost:4321,http://127.0.0.1:4321"
+SITE_URL = "https://fireman333.github.io/KlaudeHealthEducation"
+ADMIN_BASE_URL = "https://klaude-comments.tony85314.workers.dev"
+SESSION_TTL_DAYS = "7"
+MAGIC_LINK_TTL_MIN = "10"
+
+# Secrets (NEVER commit these — set via `wrangler secret put`):
+#   wrangler secret put TURNSTILE_SECRET_KEY
+#   wrangler secret put MAGIC_LINK_HMAC_SECRET
+#   wrangler secret put IP_HASH_SALT
+#   wrangler secret put MAILCHANNELS_DKIM_PRIVATE_KEY  # optional, improves Gmail deliverability
+
+# Cron — daily tick at 00:00 UTC (currently no-op; see src/lib/cron.ts)
+[triggers]
+crons = ["0 0 * * *"]
+
+# Observability
+[observability]
+enabled = true
