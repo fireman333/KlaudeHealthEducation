@@ -15,8 +15,9 @@ title: 所有文章
     <a class="post-list-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
     <p class="post-list-meta">
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-      {% if post.tags %} · {% for tag in post.tags %}#{{ tag }} {% endfor %}{% endif %}
+      {% if post.categories %} · {{ post.categories | join: " / " }}{% endif %}
     </p>
+    {% if post.tags %}<p class="post-list-tags">{% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</p>{% endif %}
     {% if post.summary %}<p class="post-list-summary">{{ post.summary }}</p>{% endif %}
   </li>
   {% endfor %}

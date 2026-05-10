@@ -7,7 +7,7 @@ layout: default
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
       {% if page.categories %} · {{ page.categories | join: ", " }}{% endif %}
-      {% if page.tags %} · {% for tag in page.tags %}<span class="tag">#{{ tag }}</span>{% endfor %}{% endif %}
+      {% if page.tags %} · {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}{% endif %}
     </p>
     {% if page.summary %}
     <p class="post-summary">{{ page.summary }}</p>

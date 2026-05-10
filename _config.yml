@@ -26,6 +26,8 @@ plugins:
 exclude:
   - README.md
   - TEMPLATE.md
+  - DESIGN.md
+  - CNAME.example
   - Gemfile
   - Gemfile.lock
   - vendor
