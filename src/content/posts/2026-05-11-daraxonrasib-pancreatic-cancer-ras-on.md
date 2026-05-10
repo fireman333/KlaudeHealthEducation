@@ -36,19 +36,19 @@ carousel:
   - src: "/img/posts/2026-05-11-daraxonrasib/01-hook.png"
     alt: "封面：胰臟癌 90% 都有 RAS 突變，Daraxonrasib 真的把鎖打開了？"
     caption: "Slide 1 — 為什麼這支藥是大事"
-    threads_text: "〈衛教筆記〉胰臟癌九成以上有 RAS 基因突變，但人類花了四十年才有第一支能跨打多型 RAS 的口服藥。\n\nNCCN v1.2026 的 KRAS 標靶仍只列 sotorasib / adagrasib（限 G12C，占胰臟癌僅 1–2%）。\n\n剩下 88–90% 的 G12D / V / R 病人長期沒對應藥可選。直到 daraxonrasib（RMC-6236）出現。\n\n4 張圖帶你看完 👇"
+    threads_text: "〈衛教筆記〉胰臟癌九成以上有 RAS 基因突變，但人類花了四十年才有第一支能跨打多型 RAS 的口服藥。\n\n美國 NCCN（國家綜合癌症網路）2026 年指引的 KRAS 標靶仍只列 sotorasib / adagrasib（限 G12C 突變，占胰臟癌僅 1–2%）。\n\n剩下 88–90% 的 G12D / V / R 病人長期沒對應藥可選。直到 daraxonrasib（RMC-6236）出現。\n\n4 張圖帶你看完 👇"
   - src: "/img/posts/2026-05-11-daraxonrasib/02-data.png"
     alt: "Phase 3 RASolute 302：daraxonrasib mOS 13.2 月 vs 化療 6.7 月，HR 0.40"
     caption: "Slide 2 — Phase 3 randomized 對比化療"
-    threads_text: "NEJM 5/7 phase 1–2 試驗（N=168）：第二線 RAS G12 突變子群 ORR 35%、mPFS 8.5 月、mOS 13.1 月。\n\n緊接著 RASolute 302 phase 3 readout：daraxonrasib mOS 13.2 月 vs 化療 6.7 月、HR 0.40、p<0.0001。\n\n死亡風險降 60% — 這是胰臟癌轉移性二線三十年來最大躍進之一。"
+    threads_text: "NEJM 5/7 phase 1–2 試驗（N=168）：第二線 RAS G12 突變子群，客觀反應率（ORR）35%、中位無惡化存活期（mPFS）8.5 月、中位整體存活期（mOS）13.1 月。\n\n緊接著 phase 3 RASolute 302 隨機分組試驗：daraxonrasib mOS 13.2 月 vs 化療 6.7 月、風險比（HR）0.40、p<0.0001。\n\n死亡風險降 60% — 這是胰臟癌轉移性二線三十年來最大躍進之一。"
   - src: "/img/posts/2026-05-11-daraxonrasib/03-coverage.png"
     alt: "標靶涵蓋面：sotorasib/adagrasib 僅 G12C ≈1–2% vs daraxonrasib 跨打多型 RAS ≈90%"
     caption: "Slide 3 — 為什麼說這是「萬用鑰匙」"
-    threads_text: "過去 sotorasib / adagrasib 像專屬鑰匙：只開 KRAS G12C 一種鎖（胰臟癌 1–2%）。\n\nDaraxonrasib 像萬用鑰匙：跨打 G12D / V / R / G13 / Q61，理論涵蓋胰臟癌約 90% 患者。\n\n機制差別：與 cyclophilin A 形成 tri-complex，鎖住 RAS 的 active GTP-bound state（不是傳統的 inactive 鎖）。"
+    threads_text: "過去 sotorasib / adagrasib 像專屬鑰匙：只開 KRAS G12C 一種鎖（胰臟癌僅 1–2%）。\n\nDaraxonrasib 像萬用鑰匙：跨打 G12D / V / R / G13 / Q61，理論涵蓋胰臟癌約 90% 患者。\n\n機制差別：跟細胞內 cyclophilin A 輔蛋白形成三元複合物（tri-complex），鎖住 RAS 的「致癌訊號傳遞中」狀態（GTP-bound）— 不像舊藥只能鎖「待機」狀態。"
   - src: "/img/posts/2026-05-11-daraxonrasib/04-takeaway.png"
     alt: "Take-home：90% 有 RAS 突變過去只 1–2% 有藥；NCCN 還沒收、健保未給付；先驗 NGS 跟主治醫師討論"
     caption: "Slide 4 — Take-home 與 CTA"
-    threads_text: "Take-home：\n\n1. 胰臟癌 90% 都有 RAS 突變、過去只 1–2% 有藥可打；daraxonrasib 是首支多型 RAS 口服標靶。\n2. NCCN v1.2026 還沒收 daraxonrasib、台灣健保也尚未給付（仍 trial-only）。\n3. 健保 2024 起 NGS 已給付胰臟癌；先驗 RAS 型別、跟主治醫師討論臨床試驗。\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-11-daraxonrasib-pancreatic-cancer-ras-on/\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。\n\n#康勞德醫普 #胰臟癌 #標靶治療 #NCCN"
+    threads_text: "Take-home：\n\n1. 胰臟癌 90% 都有 RAS 突變、過去只 1–2% 有藥可打；daraxonrasib 是首支多型 RAS 口服標靶。\n2. NCCN v1.2026 還沒收 daraxonrasib、台灣健保也尚未給付（仍在臨床試驗階段）。\n3. 健保 2024 年起次世代基因定序（next-generation sequencing, NGS）已給付胰臟癌；先驗 RAS 突變型別、跟主治醫師討論臨床試驗。\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-11-daraxonrasib-pancreatic-cancer-ras-on/\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。\n\n#康勞德醫普 #胰臟癌 #標靶治療 #NCCN"
 ---
 
 > 以下情境為虛構合成。
