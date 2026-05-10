@@ -316,6 +316,31 @@ hr {
   letter-spacing: -0.01em;
 }
 
+/* Author byline + disclaimer (every post) — vercel card style, prominent enough to read */
+.post-disclaimer-byline {
+  margin: 1.75rem 0 0;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: var(--color-surface-tint);
+  box-shadow: var(--shadow-light-ring);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.post-disclaimer-byline .byline {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+.post-disclaimer-byline .byline-disclaimer {
+  margin: 0.4em 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.825rem;
+  line-height: 1.5;
+}
+
 .post-content {
   font-size: 1.0625rem;
   line-height: 1.78;
