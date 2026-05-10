@@ -1,9 +1,26 @@
+# Astro
+dist/
+.astro/
+
+# Node
+node_modules/
+
+# Jekyll (legacy, kept until cleanup commit)
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
 Gemfile.lock
+.bundle/
+
+# Editor
 .DS_Store
 *.swp
-.bundle/
+.vscode/
+.idea/
+
+# Local-only
+.env
+.env.local
+.env.*.local

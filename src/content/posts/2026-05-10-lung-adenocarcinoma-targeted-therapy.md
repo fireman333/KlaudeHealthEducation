@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "肺腺癌如果有「靶子」可以打，就先別急著化療"
 date: 2026-05-10
 categories: [腫瘤科]

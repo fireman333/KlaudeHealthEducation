@@ -1,0 +1,72 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+interface Source {
+  title: string;
+  url: string;
+  note?: string;
+}
+
+interface Props {
+  frontmatter: {
+    title: string;
+    date: Date;
+    summary: string;
+    categories: string[];
+    tags: string[];
+    sources: Source[];
+    description?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const { title, date, summary, categories, sources, description } = frontmatter;
+
+const dateStr = date.toISOString().slice(0, 10);
+const dateDisplay = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+
+function categoryHref(c: string): string {
+  return `${import.meta.env.BASE_URL}categories/${encodeURIComponent(c)}/`.replace(/\/+/g, '/');
+}
+---
+
+<BaseLayout title={title} description={description ?? summary}>
+  <article class="container">
+    <header class="article-header">
+      {categories.length > 0 && (
+        <div class="article-categories">
+          {categories.map((c) => (
+            <a class="chip" href={categoryHref(c)}>{c}</a>
+          ))}
+        </div>
+      )}
+      <h1 class="article-title">{title}</h1>
+      <p class="article-meta">
+        <time datetime={dateStr}>{dateDisplay}</time>
+      </p>
+      <p class="article-summary">{summary}</p>
+      <aside class="disclaimer-banner" role="note">
+        <p class="byline">作者：<strong>康瑋麟</strong>｜台大醫學系大六學生（<strong>非主治醫師</strong>）</p>
+        <p class="byline-disclaimer">本文為衛教整理，<strong>不構成個別醫療建議</strong>。文中臨床情境如未另註明皆為合成，非真實病人。實際治療決策請與您的主治醫師討論。</p>
+      </aside>
+    </header>
+
+    <div class="article-body">
+      <slot />
+    </div>
+
+    {sources.length > 0 && (
+      <section class="article-sources">
+        <h3>參考資料</h3>
+        <ol>
+          {sources.map((s) => (
+            <li>
+              <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
+              {s.note && <span class="article-sources__note">{s.note}</span>}
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+  </article>
+</BaseLayout>
