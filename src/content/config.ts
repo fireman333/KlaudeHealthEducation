@@ -18,6 +18,16 @@ const posts = defineCollection({
         }),
       )
       .min(1),
+    carousel: z
+      .array(
+        z.object({
+          src: z.string(),
+          alt: z.string(),
+          caption: z.string().optional(),
+          threads_text: z.string().max(500).optional(),
+        }),
+      )
+      .optional(),
     disease: z.string().optional(),
     treatment: z.string().optional(),
     draft: z.boolean().default(false),

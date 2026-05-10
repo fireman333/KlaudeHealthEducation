@@ -9,6 +9,13 @@ interface Source {
   note?: string;
 }
 
+interface CarouselSlide {
+  src: string;
+  alt: string;
+  caption?: string;
+  threads_text?: string;
+}
+
 interface Props {
   frontmatter: {
     title: string;
@@ -17,13 +24,19 @@ interface Props {
     categories: string[];
     tags: string[];
     sources: Source[];
+    carousel?: CarouselSlide[];
     description?: string;
   };
   slug: string;
 }
 
 const { frontmatter, slug } = Astro.props;
-const { title, date, summary, categories, sources, description } = frontmatter;
+const { title, date, summary, categories, sources, carousel, description } = frontmatter;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/+$/, '');
+function resolveSrc(src: string): string {
+  if (/^https?:\/\//.test(src)) return src;
+  return `${baseUrl}${src.startsWith('/') ? src : `/${src}`}`;
+}
 
 const dateStr = date.toISOString().slice(0, 10);
 const dateDisplay = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
@@ -53,6 +66,28 @@ function categoryHref(c: string): string {
         <p class="byline-disclaimer">本文為衛教整理，<strong>不構成個別醫療建議</strong>。文中臨床情境如未另註明皆為合成，非真實病人。實際治療決策請與您的主治醫師討論。</p>
       </aside>
     </header>
+
+    {carousel && carousel.length > 0 && (
+      <section class="article-carousel" aria-label="圖片懶人包">
+        <div class="article-carousel__track">
+          {carousel.map((slide, i) => (
+            <figure class="article-carousel__slide">
+              <img
+                src={resolveSrc(slide.src)}
+                alt={slide.alt}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                width="1080"
+                height="1080"
+              />
+              {slide.caption && (
+                <figcaption class="article-carousel__caption">{slide.caption}</figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+        <p class="article-carousel__hint">← 滑動瀏覽 {carousel.length} 張懶人包 →</p>
+      </section>
+    )}
 
     <div class="article-body">
       <slot />
