@@ -7,7 +7,7 @@ description: >-
 author: 康瑋麟（WLK）
 lang: zh-Hant-TW
 
-baseurl: ""
+baseurl: "/KlaudeHealthEducation"
 url: "https://fireman333.github.io"
 
 permalink: /posts/:year-:month-:day-:title/
