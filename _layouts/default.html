@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-Hant-TW' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f3a5f">
+  <title>{% if page.title %}{{ page.title }}｜{{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">所有文章</a>
+        <a href="{{ '/about/' | relative_url }}">關於</a>
+        <a href="https://github.com/fireman333/KlaudeHealthEducation" target="_blank" rel="noopener">原始檔</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-meta">
+        © {{ 'now' | date: "%Y" }} {{ site.author }} · 內容以 CC BY-NC-SA 4.0 授權釋出 ·
+        <a href="https://github.com/fireman333/KlaudeHealthEducation" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-disclaimer">
+        ⚠ 本站文章為衛教科普目的，不構成個別醫療建議。實際治療決策請與您的主治醫師討論。
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
