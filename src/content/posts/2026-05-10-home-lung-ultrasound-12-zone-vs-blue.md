@@ -1,8 +1,8 @@
 ---
 title: "在宅幫長輩診斷肺炎，超音波 12 區比 BLUE protocol 更適合"
 date: 2026-05-10
-categories: [家庭醫學科]
-tags: [在宅醫療, 居家醫療, 肺炎, 肺部超音波, POCUS, 老年醫學]
+categories: [家庭醫學科, POCUS]
+tags: [在宅醫療, 居家醫療, 肺炎, 肺部超音波, 老年醫學]
 summary: "BLUE protocol 是 Lichtenstein 在 ICU 設計的 3 分鐘急救流程，主要看前胸；12-zone lung ultrasound 把背側和側胸都掃完，更適合臥床、衰弱、肺炎容易落在後背的長輩。在宅醫療場景下不趕時間，12 區看完才不會漏。"
 sources:
   - title: "Lichtenstein DA, Mezière GA — Relevance of lung ultrasound in the diagnosis of acute respiratory failure: the BLUE protocol, Chest 2008"
@@ -29,6 +29,12 @@ sources:
   - title: "臺大醫院護理部陳燕雅護理長 — 肺炎之護理指導，臺大醫院健康電子報 2025/02"
     url: "https://epaper.ntuh.gov.tw/health/202502/health_2.html"
     note: "台灣醫學中心 patient-facing 護理指引；老年人肺炎警訊與居家照護重點"
+  - title: "Diagnosis and Management of Community-acquired Pneumonia: An Official American Thoracic Society Clinical Practice Guideline, AJRCCM 2025"
+    url: "https://doi.org/10.1164/rccm.202507-1692ST"
+    note: "2025 ATS CAP guideline 原文；conditional recommendation：建議 LUS 為 CXR 在有 expertise 的中心的合理替代（13/15 委員贊成、low-quality evidence）"
+  - title: "NICE Evidence Review A — Diagnostic accuracy of lung ultrasound compared to chest X-ray for diagnosing pneumonia (NICE Guideline NG250)"
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK618764/"
+    note: "英國 NICE 2025/09 同主題實證審查；獨立評估、結論與 ATS 一致"
 ---
 
 > 以下開場為**虛構合成的訪視情境**，目的是把讀者帶進議題，非任何真實病人。
@@ -71,7 +77,7 @@ sources:
 
 而且超音波在肺炎診斷的表現，**已經被證明比胸部 X 光還準**。
 2025 年 Lancet 的 CAP（社區型肺炎）review 整合多篇研究：超音波對肺炎的綜合敏感度 92–95%、特異度 89–90%，胸部 X 光只有 77–92% / 49–91%[5]。
-2025 年的美國 ATS 指引也已經把肺部超音波列為**胸部 X 光的合理替代方案**[5]。
+2025 年的美國 ATS 指引[9]和英國 NICE 同年的實證審查[10]，都把肺部超音波列為**胸部 X 光的合理替代方案**（conditional recommendation；前提是醫療單位有相應的訓練與設備）。
 
 ---
 
