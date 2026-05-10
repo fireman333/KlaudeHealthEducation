@@ -1,7 +1,7 @@
 ---
 title: "胰臟癌 90% 都有 RAS 突變：Daraxonrasib 是不是把這把鎖真的打開了"
 date: 2026-05-11
-categories: [腫瘤科, 精準醫療]
+categories: [腫瘤科, 肝膽腸胃科, 精準醫療]
 tags: [胰臟癌, RAS, KRAS, 標靶治療, NCCN, daraxonrasib, RMC-6236]
 summary: "胰臟癌九成以上有 RAS 基因突變，但人類四十年來只能打 KRAS G12C 這個約占 1–2% 的小眾。Daraxonrasib 是首個能跨打 G12D/V/R 等多型 RAS 的口服藥；NEJM phase 1–2 第二線 ORR 35%、mOS 13.1 月，phase 3 RASolute 302 已宣告 mOS 13.2 vs 6.7 月（HR 0.40）。NCCN v1.2026 仍未收錄、台灣健保更未給付，但這是這個「癌王」三十年來首次出現對 90% 患者都可能受益的標靶藥物。"
 sources:
