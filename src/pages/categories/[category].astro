@@ -1,0 +1,60 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const seen = new Map<string, CollectionEntry<'posts'>[]>();
+  for (const post of posts) {
+    for (const c of post.data.categories) {
+      if (!seen.has(c)) seen.set(c, []);
+      seen.get(c)!.push(post);
+    }
+  }
+  return Array.from(seen.entries()).map(([category, posts]) => ({
+    params: { category },
+    props: {
+      category,
+      posts: posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+interface Props {
+  category: string;
+  posts: CollectionEntry<'posts'>[];
+}
+
+const { category, posts } = Astro.props;
+
+function postHref(slug: string): string {
+  return `${import.meta.env.BASE_URL}posts/${slug}/`.replace(/\/+/g, '/');
+}
+
+function fmt(d: Date): string {
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`;
+}
+---
+
+<BaseLayout title={`主題：${category}`} description={`所有屬於「${category}」分類的文章`}>
+  <section class="container">
+    <div class="index-hero">
+      <h1 class="index-hero__title">主題：{category}</h1>
+      <p class="index-hero__lead">{posts.length} 篇文章</p>
+    </div>
+
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li class="post-card">
+          <p class="post-card__meta">
+            <time datetime={post.data.date.toISOString().slice(0, 10)}>{fmt(post.data.date)}</time>
+          </p>
+          <h3 class="post-card__title">
+            <a href={postHref(post.slug)}>{post.data.title}</a>
+          </h3>
+          <p class="post-card__summary">{post.data.summary}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+const counts = new Map<string, number>();
+for (const post of posts) {
+  for (const c of post.data.categories) {
+    counts.set(c, (counts.get(c) ?? 0) + 1);
+  }
+}
+
+const categories = Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
+
+function categoryHref(c: string): string {
+  return `${import.meta.env.BASE_URL}categories/${encodeURIComponent(c)}/`.replace(/\/+/g, '/');
+}
+---
+
+<BaseLayout title="所有主題" description="依主題分類的衛教科普文章">
+  <section class="container">
+    <div class="index-hero">
+      <h1 class="index-hero__title">所有主題</h1>
+      <p class="index-hero__lead">依臨床主題分類，挑你關心的病種或議題進入。</p>
+    </div>
+
+    {categories.length === 0 ? (
+      <p style="margin-top: var(--space-6); color: var(--color-text-muted);">尚無分類。</p>
+    ) : (
+      <ul class="category-grid">
+        {categories.map(([name, count]) => (
+          <li>
+            <a href={categoryHref(name)}>
+              {name}
+              <span class="category-grid__count">{count} 篇文章</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>

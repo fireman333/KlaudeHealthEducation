@@ -1,0 +1,93 @@
+---
+import '@/styles/global.css';
+import { SITE, NAV } from '@/config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const { title, description, ogImage, canonical } = Astro.props;
+
+const fullTitle = title ? `${title}｜${SITE.title}` : SITE.title;
+const metaDesc = description ?? SITE.description;
+const og = ogImage ?? SITE.ogImage;
+const canonicalUrl =
+  canonical ?? new URL(Astro.url.pathname, Astro.site ?? SITE.url).href;
+// og may be either an absolute URL or a path relative to the site root.
+// Path-only values must be prefixed with BASE_URL so the OG image resolves
+// inside the project pages subpath (/KlaudeHealthEducation/...).
+const ogPath = og.startsWith('http')
+  ? og
+  : `${import.meta.env.BASE_URL}${og}`.replace(/([^:])\/\/+/g, '$1/');
+const ogImageUrl = new URL(ogPath, Astro.site ?? SITE.url).href;
+
+function navHref(href: string): string {
+  if (href.startsWith('http')) return href;
+  if (href === '/feed.xml') return `${import.meta.env.BASE_URL}feed.xml`.replace(/\/+/g, '/');
+  return `${import.meta.env.BASE_URL}${href}`.replace(/\/+/g, '/');
+}
+---
+
+<!doctype html>
+<html lang={SITE.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDesc} />
+    <meta name="author" content={SITE.author} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDesc} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:locale" content="zh_TW" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDesc} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE.title}
+      href={`${import.meta.env.BASE_URL}feed.xml`.replace(/\/+/g, '/')}
+    />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`.replace(/\/+/g, '/')} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-title" href={import.meta.env.BASE_URL}>{SITE.title}</a>
+        <nav class="site-nav" aria-label="主導覽">
+          {NAV.map((item) => (
+            <a href={navHref(item.href)}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span>© {new Date().getFullYear()} {SITE.author}</span>
+        <span>{SITE.tagline}</span>
+      </div>
+    </footer>
+  </body>
+</html>

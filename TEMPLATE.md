@@ -1,18 +1,17 @@
 # 新增文章模板
 
-> 把本檔複製到 `_posts/YYYY-MM-DD-slug.md`，填入 front matter 與內容。
-> 檔名格式 **必須** 為 `YYYY-MM-DD-英文-連字號-slug.md`，否則 Jekyll 不會 build。
+> 把本檔複製到 `src/content/posts/YYYY-MM-DD-slug.md`，填入 frontmatter 與內容。
+> 檔名格式 **必須** 為 `YYYY-MM-DD-英文-連字號-slug.md`。URL 1:1 從檔名推（含日期前綴），所以這個檔名也是部署後的 URL slug。
 
 ---
 
 ```markdown
 ---
-layout: post
 title: "文章中文標題（含引號避免冒號出錯）"
 date: 2026-05-10
 categories: [腫瘤科]                # 主分類（科別）
 tags: [肺癌, 標靶治療, NCCN]        # 細分標籤
-summary: "一句話 take-home，會出現在文章列表跟 SEO description。"
+summary: "一句話 take-home，會出現在文章列表、OG description、SEO description。"
 sources:
   - title: "NCCN Guidelines: NSCLC v3.2026"
     url: "https://www.nccn.org/"
@@ -45,18 +44,36 @@ sources:
 1. 條列式重點 1
 2. 條列式重點 2
 3. 條列式重點 3
-
----
-
-> ⚠ 本文為衛教科普，case 為虛構合成。實際治療決策請與您的主治醫師討論。
 ```
 
+> 不必再手寫文末 `⚠ 本文為衛教科普⋯` disclaimer — 由 `PostLayout.astro` 自動 render 在每篇文 header（包含作者 byline + 醫學生身分聲明）。
+
 ---
+
+## Frontmatter schema 規則
+
+由 `src/content/config.ts` zod 驗證，build time 強制檢查：
+
+| Field | 必填 | 說明 |
+|---|---|---|
+| `title` | ✅ | string |
+| `date` | ✅ | YYYY-MM-DD |
+| `summary` | ✅ | 一句話 take-home（同時用作 OG description） |
+| `sources` | ✅ | array, ≥ 1 筆，每筆需 `title` + `url`（合法 URL），`note` 可選 |
+| `categories` | optional | string array，預設 `[]` |
+| `tags` | optional | string array |
+| `description` | optional | 只在想覆寫 OG description 才填 |
+| `disease` | optional | 保留給未來 schema 收緊（v2） |
+| `treatment` | optional | 同上 |
+| `draft` | optional | `true` 不會被 build 成靜態頁 |
+
+❌ 不要寫 `layout: post`（Astro 5 不支援；舊 Jekyll 殘留），會印 ERROR log 但不 fail build。
 
 ## 寫作 checklist（發布前）
 
 - [ ] 檔名為 `YYYY-MM-DD-slug.md`，date 與檔名一致
-- [ ] Front matter 五個必填：`layout`, `title`, `date`, `summary`, `sources`
+- [ ] Frontmatter 必填：`title`, `date`, `summary`, `sources`
+- [ ] `sources` 至少 1 筆，每筆有 `title` + 合法 `url`
 - [ ] 平均句長 15–25 字
 - [ ] 開場是 hook，不是總論
 - [ ] 至少 1 個生活化類比
@@ -66,19 +83,28 @@ sources:
 - [ ] 通篇繁體中文 + 台灣用語（不可出現「視頻 / 信息 / 軟件 / 網絡」）
 - [ ] emoji ≤ 2
 
-## 本地預覽（可選）
+## 本地預覽
 
 ```bash
-bundle install
-bundle exec jekyll serve
-# 開 http://127.0.0.1:4000
+pnpm dev
+# 開 http://localhost:4321/KlaudeHealthEducation/
 ```
+
+熱更新：存檔後瀏覽器自動 refresh。
+
+## 本地 build 驗證（建議 push 前跑）
+
+```bash
+pnpm build
+```
+
+= `astro check && astro build`。會跑 zod schema 驗證 + TypeScript check。frontmatter 缺欄位會直接 error。
 
 ## 發布
 
 ```bash
-git add _posts/YYYY-MM-DD-slug.md
+git add src/content/posts/YYYY-MM-DD-slug.md
 git commit -m "post: 新增文章 〈標題〉"
 git push
-# GitHub Pages 約 1–3 分鐘後自動 rebuild
+# GitHub Actions 約 2–3 分鐘 build + deploy 完成
 ```

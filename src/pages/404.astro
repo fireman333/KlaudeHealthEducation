@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="找不到頁面" description="這個連結可能已失效。">
+  <section class="container notfound">
+    <h1>404</h1>
+    <p>這個連結找不到對應的內容。可能網址打錯，也可能文章已經改寫。</p>
+    <p>
+      <a href={import.meta.env.BASE_URL}>回首頁</a>
+    </p>
+  </section>
+</BaseLayout>

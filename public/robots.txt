@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fireman333.github.io/KlaudeHealthEducation/sitemap-index.xml
