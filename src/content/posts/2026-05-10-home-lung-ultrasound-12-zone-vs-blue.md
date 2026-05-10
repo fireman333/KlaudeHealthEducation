@@ -26,9 +26,9 @@ sources:
   - title: "健保署 — 居家醫療照護整合計畫"
     url: "https://www.nhi.gov.tw/ch/cp-5195-2e804-2875-1.html"
     note: "台灣自 2016 年起整合一般居家、呼吸、安寧、居家醫療試辦四項，分三階段給付"
-  - title: "高雄長庚胸腔內科 — 肺炎衛教"
-    url: "https://www1.cgmh.org.tw/intr/intr4/c8130/patient031.asp"
-    note: "台灣醫學中心對老年肺炎警訊的 framing：呼吸 ≥30/min、意識變化、低體溫、低血壓、低 SpO2"
+  - title: "臺大醫院護理部陳燕雅護理長 — 肺炎之護理指導，臺大醫院健康電子報 2025/02"
+    url: "https://epaper.ntuh.gov.tw/health/202502/health_2.html"
+    note: "台灣醫學中心 patient-facing 護理指引；老年人肺炎警訊與居家照護重點"
 ---
 
 > 以下開場為**虛構合成的訪視情境**，目的是把讀者帶進議題，非任何真實病人。
