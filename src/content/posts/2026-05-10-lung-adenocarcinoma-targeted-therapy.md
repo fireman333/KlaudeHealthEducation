@@ -5,9 +5,9 @@ categories: [腫瘤科, 胸腔科]
 tags: [肺癌, 標靶治療, 精準醫療, NCCN]
 summary: "NCCN v3.2026 明確建議：晚期肺腺癌只要驗到 driver mutation，第一線就用標靶，不論 PD-L1 高低。先做基因檢測再開始治療，整體存活反而更好。"
 sources:
-  - title: "NCCN Clinical Practice Guidelines: NSCLC v3.2026"
-    url: "https://www.nccn.org/"
-    note: "Driver-positive NSCLC 第一線標靶優先（與 PD-L1 無關）"
+  - title: "NCCN Clinical Practice Guidelines: Non-Small Cell Lung Cancer v3.2026"
+    url: "https://www.nccn.org/professionals/physician_gls/pdf/nscl.pdf"
+    note: "Driver-positive NSCLC 第一線標靶優先（與 PD-L1 無關）（NCCN guideline PDF deep-link）"
   - title: "FLAURA2 — Osimertinib + Chemo, NEJM"
     url: "https://www.nejm.org/doi/full/10.1056/NEJMoa2306434"
   - title: "FLAURA — Osimertinib OS, NEJM"
