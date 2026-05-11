@@ -38,6 +38,57 @@ sources:
   - title: "健保照顧您—健保給付各類「血管支架」說明 — 衛生福利部"
     url: "https://www.mohw.gov.tw/cp-3159-24248-1.html"
     note: "台灣健保冠狀動脈支架給付：每年每人最多 4 個金屬支架全額、塗藥支架自 2012 年起由病人付差額"
+carousel:
+  - src: "/img/posts/2026-05-11-cad-pci-vs-cabg/01-hook.png"
+    alt: "封面：心導管 vs 繞道手術 該怎麼選？三條血管都塞了，為什麼有時候醫師建議直接開刀？"
+    caption: "Slide 1 — Hook（網頁/Threads 第 1 張）"
+    threads_text: |
+      〈康勞德醫普〉
+
+      「我三條血管都塞得很嚴重，醫師建議直接開刀，不要放支架。」
+
+      聽到這句通常難以接受。心臟開刀聽起來大、放支架感覺溫和——可是 2021 ACC/AHA 心臟血管重建指引在多條血管病變、糖尿病合併冠心病、左主幹高複雜度等情境，仍把繞道手術放在心導管之前。
+
+      不是醫師守舊，是 30 年隨機試驗的結論。
+  - src: "/img/posts/2026-05-11-cad-pci-vs-cabg/02-data.png"
+    alt: "SYNTAX 試驗 5 年數據對照：PCI vs CABG 主要不良事件、死亡、心肌梗塞、再次打通"
+    caption: "Slide 2 — 關鍵數據"
+    threads_text: |
+      SYNTAX 試驗：1,095 位三條血管病變病人 5 年下來——
+
+      主要不良心腦血管事件 PCI 37.5% vs CABG 24.2%
+      全因死亡 14.6% vs 9.2%
+      心肌梗塞 9.2% vs 4.0%
+      需要再次打通 25.4% vs 12.6%
+
+      11 篇試驗 11,518 位病人個體資料整合分析（Head 2018 Lancet）也得到同方向：5 年死亡 HR 1.20，PCI 比 CABG 高 20%。
+  - src: "/img/posts/2026-05-11-cad-pci-vs-cabg/03-decision.png"
+    alt: "PCI 與 CABG 適應情境對照：2021 ACC/AHA 指引怎麼建議"
+    caption: "Slide 3 — 不是技術新舊，是哪一種情境"
+    threads_text: |
+      打個比喻——
+
+      PCI 是把高速公路某個塌方點清空、上加固鋼板。
+      CABG 是另開一條高架橋從塌方點上方跨過去。
+
+      如果只是一段塌方，清空夠用；如果整條路斷成三段，新蓋高架橋通常活得久。
+
+      糖尿病加多條血管病變這個族群差距特別大：FREEDOM 試驗 8 年全因死亡 PCI 24.3% vs CABG 18.3%，HR 1.36。2021 指引這個情境給 Class I（最強級別）推薦 CABG。
+  - src: "/img/posts/2026-05-11-cad-pci-vs-cabg/04-takeaway.png"
+    alt: "Take-home 三點：PCI 不普遍比 CABG 好、不要開刀不是好的第一反應、複雜病變要 Heart Team 評估"
+    caption: "Slide 4 — Take-home 與 CTA"
+    threads_text: |
+      三個 take-home：
+
+      1. PCI 不是普遍比 CABG 好——複雜病變的死亡率差異是真的
+      2.「我不要開刀」不是好第一反應——三條血管+糖尿病情境，5 年死亡率差 20-25%
+      3. 複雜病變要 Heart Team 共同評估——心內、心外、臨床心臟科一起看
+
+      完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-11-cad-pci-vs-cabg/
+
+      #康勞德醫普 #冠心病 #心導管 #繞道手術
+
+      ⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。
 ---
 
 「我三條血管都塞得很嚴重，醫師建議直接開刀，不要放支架。」
