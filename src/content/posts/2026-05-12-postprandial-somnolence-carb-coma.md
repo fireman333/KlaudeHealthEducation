@@ -18,9 +18,9 @@ carousel:
     caption: "Slide 3 — 網路機制 vs 主流文獻"
     threads_text: "網路三套熱門機制，主流文獻怎麼說？\n1. 血液跑去消化道、腦缺血 → 2004 Medical Hypotheses 直接駁斥，腦血流會優先維持\n2. 反應性低血糖造成嗜睡 → Spring 1989 量過、fatigue 開始時血糖還高、時間軸對不上\n3. 色胺酸→血清素→褪黑 → 比例的確會變，但跟 daytime 嗜睡的人體因果鏈 inconsistent\n比較有機制證據的方向（葡萄糖直接影響下視丘 sleep/wake 神經元）目前多是小鼠實驗。"
   - src: "/img/posts/2026-05-12-postprandial-somnolence-carb-coma/04-takeaway.png"
-    alt: "Take-home 三點：(1) 暈碳不是診斷、PPS 是相關概念 (2) 精緻碳水 claim 證據比想像弱 (3) 動物實驗有 hint 但 bedside 證據仍不足"
-    caption: "Slide 4 — Take-home"
-    threads_text: "Take-home：\n1. 「暈碳」不是醫學診斷；相關概念叫 postprandial somnolence，研究上確實量得到「吃飽會想睡」\n2. 但「精緻碳水比其他食物更容易引發嗜睡」這個具體 claim，目前實驗結果混合、effect 比網路說的小\n3. 比較有 mechanism 證據的方向（葡萄糖直接影響下視丘）目前多在動物實驗，不能直接套用到「人類的暈碳感」\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-12-postprandial-somnolence-carb-coma/\n\n#康勞德醫普 #飯後嗜睡 #升糖指數 #營養\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。"
+    alt: "Take-home 三點：(1)「暈碳」不是醫學診斷 — 人體實驗都 n=7–18 小規模、談不上已證實 (2)「精緻碳水才會暈」？證據混合 — Afaghi 2007 (n=12) 唯一正面、17 年無 RCT；Wells 反而 high-fat 更累 (3) 葡萄糖→下視丘機制都在小鼠 — 人類 in vivo replication 仍缺；整體文獻多為小樣本 + 動物模型 + observational、缺大型 RCT"
+    caption: "Slide 4 — Take-home (v2)"
+    threads_text: "Take-home：\n1. 「暈碳」不是醫學診斷 — 人體實驗都 n=7–18 小規模，談不上「已證實」\n2. 「精緻碳水才會暈」？證據混合 — Afaghi 2007 (n=12) 唯一正面、17 年無 RCT；Wells 1997 (n=18) 反而是 high-fat 比 high-carb 更累，對「精緻碳水才會暈」是反例\n3. 葡萄糖→下視丘機制都在小鼠模型 — 人類 in vivo replication 仍缺\n\n整體文獻多為小樣本 + 動物模型 + observational，缺大型 RCT。\n\n完整衛教整理 → fireman333.github.io/KlaudeHealthEducation/posts/2026-05-12-postprandial-somnolence-carb-coma/\n\n#康勞德醫普 #飯後嗜睡 #升糖指數 #營養\n\n⚠ 作者為醫學生（非主治醫師），衛教整理，不構成個別醫療建議。"
 sources:
   - title: "衛生福利部「食物 GI 知多少 吃出健康少煩惱！」"
     url: "https://www.mohw.gov.tw/cp-16-26527-1.html"
