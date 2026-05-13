@@ -12,7 +12,7 @@ carousel:
   - src: "/img/posts/2026-05-13-glp1-ra-and-next-gen-incretins/02-data.png"
     alt: "關鍵數據：SELECT trial — MACE 6.5% vs 8.0%, HR 0.80, n=17,604"
     caption: "Slide 2 — 關鍵數據：SELECT 心血管 trial"
-    threads_text: "SELECT trial（NEJM 2023, n=17,604）— GLP-1 RA 第一次在「沒有糖尿病」的肥胖族群證實心血管益處：\n\n• 主要複合終點 MACE（心血管死亡 / 非致死性心肌梗塞 / 中風）：semaglutide 6.5% vs 安慰劑 8.0%\n• 風險比 hazard ratio (HR) 0.80（95% CI 0.72–0.90）= 相對風險降 20%\n• 條件：年齡 ≥ 45 歲、BMI ≥ 27、已有心血管疾病\n\n但要 caveat：這是針對「已有 CV 病、BMI ≥ 27、無糖尿病」族群——不能直接外推到一般想減重的人。\n\n#康勞德醫普 #SELECT"
+    threads_text: "SELECT trial（NEJM 2023, n=17,604）— GLP-1 RA 第一次在「沒有糖尿病」的肥胖族群證實心血管益處：\n\n• 主要複合終點 MACE（心血管死亡 / 非致死性心肌梗塞 / 中風）：semaglutide 6.5% vs 安慰劑 8.0%\n• 風險比 hazard ratio (HR) 0.80（95% CI 0.72–0.90）= 相對風險降 20%\n• 條件：年齡 ≥ 45 歲、BMI ≥ 27、已有心血管疾病\n\n但要記得：這是針對「已有心血管疾病、BMI ≥ 27、無糖尿病」族群——不能直接外推到一般想減重的人。\n\n#康勞德醫普 #SELECT"
   - src: "/img/posts/2026-05-13-glp1-ra-and-next-gen-incretins/03-mechanism.png"
     alt: "三代靶點：單靶 GLP-1 (semaglutide) → 雙靶 GLP-1/GIP (tirzepatide) → 三靶 GLP-1/GIP/glucagon (retatrutide)"
     caption: "Slide 3 — 從單靶到三靶：減重幅度的演化"
@@ -88,7 +88,7 @@ GLP-1 RA 不是直接「燃脂」，而是同時走三條路徑[1]：
 
 頭對頭網絡 meta-analysis 顯示 semaglutide 降 HbA1c 約 1.45–1.5%、liraglutide 約 1.1–1.2%、dulaglutide 約 1.1%；體重方面 semaglutide 2.4 mg 在肥胖族群 68 週可達 -14.9% 至 -16.9%（約 9–12 公斤）[1]。國健署官方立場是體重下降 ≥ 5% 即可帶來顯著健康獲益（如改善高血壓與糖尿病）[2]——以這個標準看，2024–2026 的新一代藥物已經明顯超越「臨床顯著」門檻。
 
-但這裡要 caveat：「平均下降 15%」是試驗條件下、有強化生活型態介入、有定期追蹤的結果，**不等於每個人停掉所有努力打了針就會掉 15%**。多數試驗也顯示停藥後體重會反彈。
+但這裡要說清楚：「平均下降 15%」是試驗條件下、有強化生活型態介入、有定期追蹤的結果，**不等於每個人停掉所有努力打了針就會掉 15%**。多數試驗也顯示停藥後體重會反彈。
 
 ## 數據怎麼說 — 三個 2024–2025 年里程碑試驗
 
@@ -126,7 +126,7 @@ GLP-1 RA 不是直接「燃脂」，而是同時走三條路徑[1]：
 
 意義：HFpEF 過去缺少有效藥物（不像 HFrEF 有 β-blocker、ACEi、SGLT2i 等）。SUMMIT 把「肥胖型 HFpEF」這個亞群（占 HFpEF 大宗）變成腸泌素藥物的明確適應症之一。
 
-但 caveat：n=731 屬中等樣本、是針對「肥胖型」而非全部 HFpEF；非肥胖 HFpEF 病人能否獲益仍待研究。
+但要注意：n=731 屬中等樣本、是針對「肥胖型」而非全部 HFpEF；非肥胖 HFpEF 病人能否獲益仍待研究。
 
 ## 第二代 — 雙重 / 三重靶點 agonist
 
@@ -161,7 +161,7 @@ GLP-1 RA 大部分是注射劑（peptide 結構容易在腸胃道被分解）。
 
 Orforglipron 不是 peptide 而是 small-molecule，吃法相對自由（不必空腹）。**ACHIEVE-1**（NEJM 2025, n=559）— 早期 T2D 族群 40 週 HbA1c 下降 1.48%、體重下降 7.6%（36 mg 劑量）[11]。已於 2026 年 4 月由 FDA 核准用於肥胖。
 
-但 caveat：減重幅度（~9.6% in ATTAIN-2 obesity + T2D 族群、72 週）比注射 semaglutide / tirzepatide 仍稍弱；停藥腸胃副作用導致的中止率 6.1–9.9%（vs 安慰劑 4.1%）。
+但要注意：減重幅度（ATTAIN-2 obesity + T2D 族群 72 週約 -9.6%）比注射 semaglutide / tirzepatide 仍稍弱；停藥腸胃副作用導致的中止率 6.1–9.9%（vs 安慰劑 4.1%）。
 
 ## 副作用 / 適合誰 / 不適合誰
 
