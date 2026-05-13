@@ -60,13 +60,10 @@ sources:
 
 ## PMOS 到底是什麼？字面拆解
 
-```
-PCOS = Poly Cystic   Ovary    Syndrome
-       多    囊性     卵巢      症候群
-
-PMOS = Poly Endocrine Metabolic Ovarian Syndrome
-       多    內分泌    代謝      卵巢      症候群
-```
+| 縮寫 | 英文全名 | 中文拆解 |
+|---|---|---|
+| **PCOS** | Poly · **Cystic** · Ovary · Syndrome | 多 · **囊性** · 卵巢 · 症候群 |
+| **PMOS** | Poly · **Endocrine** · **Metabolic** · Ovarian · Syndrome | 多 · **內分泌** · **代謝** · 卵巢 · 症候群 |
 
 3 個改動[1][3]：
 
