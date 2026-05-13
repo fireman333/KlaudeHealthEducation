@@ -1,7 +1,7 @@
 ---
 title: "心房顫動會把瓣膜弄壞嗎？— valvular AF / non-valvular AF 與抗凝血劑選擇的決策樹"
 date: 2026-05-12
-categories: [心臟內科, 心房顫動, 抗凝血劑]
+categories: [心臟內科, 心律不整, 用藥衛教]
 tags: [心房顫動, 瓣膜疾病, 抗凝血劑, DOAC, warfarin, 電燒]
 summary: "心房顫動最大的風險不是心律本身、而是心房內形成血栓打到大腦。指引最新立場：「valvular AF」這個詞被建議淘汰、新定義只剩兩種情境（中度以上二尖瓣狹窄 + 機械瓣膜）需要用 warfarin，其餘 AF + 瓣膜疾病（生物瓣膜 / TAVR 後 / 二尖瓣逆流）都可以用新型口服抗凝血劑（DOAC）。INVICTUS 在風濕性二尖瓣狹窄族群顯示 warfarin 仍贏 rivaroxaban、RIVER 在生物瓣膜族群顯示 DOAC 不劣於 warfarin、ENVISAGE-TAVI 在 TAVR 後顯示 edoxaban efficacy 不劣但出血較多。節律 vs 心率控制方面，EAST-AFNET 4 證實早期介入節律控制有好處，CASTLE-AF 證實 AF + 心衰 + LVEF≤35% 從電燒得到的好處最明確。"
 sources:
