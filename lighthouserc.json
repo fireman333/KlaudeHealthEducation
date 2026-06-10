@@ -1,0 +1,40 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./.lh-serve",
+      "url": [
+        "http://localhost/KlaudeHealthEducation/posts/2026-05-11-daraxonrasib-pancreatic-cancer-ras-on/"
+      ],
+      "numberOfRuns": 3,
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "cpuSlowdownMultiplier": 4,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0
+        },
+        "onlyCategories": ["accessibility", "seo", "performance"]
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "categories:seo": ["error", { "minScore": 0.95 }],
+        "categories:performance": ["error", { "minScore": 0.70 }]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

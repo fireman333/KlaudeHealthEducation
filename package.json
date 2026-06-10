@@ -8,7 +8,10 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "size": "astro build && size-limit",
+    "lighthouse:prep": "rm -rf .lh-serve && mkdir -p .lh-serve && cp -R dist .lh-serve/KlaudeHealthEducation",
+    "lighthouse:local": "astro build && pnpm lighthouse:prep && lhci autorun --config=lighthouserc.json --upload.target=filesystem --upload.outputDir=.lighthouseci"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -22,5 +25,10 @@
     "react-dom": "^18.3.1",
     "typescript": "^5.7.3"
   },
-  "packageManager": "pnpm@9.15.9"
+  "packageManager": "pnpm@9.15.9",
+  "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "@size-limit/file": "^12.1.0",
+    "size-limit": "^12.1.0"
+  }
 }
