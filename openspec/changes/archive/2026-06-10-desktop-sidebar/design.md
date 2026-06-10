@@ -173,9 +173,10 @@
 
 ## Open Questions
 
-1. **Q**: JS bundle baseline 是多少？→ tasks.md Phase 1 task 1 量
-2. **Q**: 30 KB cap 是「現有 + 30 KB 增量」還是「絕對 30 KB」？→ baseline 量完再決，取嚴
-3. **Q**: DESIGN.md §sidebar chrome rules 完整內容？→ spec 階段細化 + 寫入 DESIGN.md PR
-4. **Q**: CLS 從 `<details>` 開合 push down 實際影響多少？→ implementation 階段 smoke test Lighthouse Performance
-5. **Q**: yukina 結構參照取哪些檔？→ implementation 階段對照 [SideBar.astro](https://github.com/WhitePaper233/yukina/blob/main/src/components/SideBar.astro) + [PostArchiveLayout.astro](https://github.com/WhitePaper233/yukina/blob/main/src/layouts/PostArchiveLayout.astro)
-6. **Q**: Phase 2 Popular 區塊的 comments-api 策略（a / b / c 三選一）？→ Phase 2 trigger 達成時開新 change 解
+1. ~~**Q**: JS bundle baseline 是多少？~~ ✅ **Resolved (Phase 1 task 1.1)**: 48.6 KB gzipped (client.*.js 44 KB + CommentBox island 2.8 KB + Astro hydration 2.7 KB)
+2. ~~**Q**: 30 KB cap 是「現有 + 30 KB 增量」還是「絕對 30 KB」？~~ ✅ **Resolved (Phase 1 task 1.3)**: rewritten as MVP zero new client JS + future sidebar chunk ≤ 5 KB delta. Spec Requirement 10 + design D6 both updated.
+3. ~~**Q**: DESIGN.md §sidebar chrome rules 完整內容？~~ ✅ **Resolved (Phase 3)**: appended as new §9 with 6 sub-sections (Typography / Layout / Links / Forbidden chrome / Animation exception / Mobile rules / Quick reference addendum). All additive to existing §6 Don't.
+4. ~~**Q**: CLS 從 `<details>` 開合 push down 實際影響多少？~~ ✅ **Resolved (Phase 4.6 closed-form analysis)**: mobile details placed at page bottom (below CommentBox, above footer) means opening only pushes footer — article content above never reflows. Initial paint CLS = 0; user-click triggered open carries Web Vitals `had-recent-input` flag (excluded from CLS scoring). Risk R1 closed.
+5. ~~**Q**: yukina 結構參照取哪些檔？~~ ✅ **Resolved (Phase 4-6)**: ended up not needing yukina reference — Astro `getCollection` + Map grouping was simpler than yukina's pattern.
+6. **Q**: Phase 2 Popular 區塊的 comments-api 策略（a / b / c 三選一）？→ Phase 2 trigger 達成時開新 change 解。Status: deferred per spec Requirement 5/6; Popular section omitted from MVP DOM. Integration strategy will be respec'd when ≥ 15 posts + ≥ 5 with ≥ 3 comments threshold met.
+7. **NEW Q (added 2026-06-10)**: CI enforcement of spec Requirements 10 (JS bundle cap) + 11 (Lighthouse ≥ 95)? → Phase 8 deferred to follow-up change `add-quality-gates-ci`. Until that lands, enforcement is manual at deploy time (run `pnpm build` + inspect `dist/_astro/` for any new `Sidebar*.js` chunk before merging sidebar-touching changes).

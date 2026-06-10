@@ -53,13 +53,17 @@
 - [x] 7.2 Add an inline comment marking this as「Phase 2 unlock — see openspec/specs/desktop-sidebar/spec.md Requirement: Phase 2 Popular unlock trigger」 — added in Sidebar.astro frontmatter AND inline JSX comment near where the section would render
 - [x] 7.3 Verify no comments-api network request fires during build OR runtime — confirmed via `preview_network` grep: only `/api/comments` requests are from existing CommentBox React island (loads on post page to fetch existing comments via `localhost:8787/api/comments?slug=...`), unrelated to sidebar Popular. Popular section has 0 DOM → cannot fire requests.
 
-## 8. Phase 8 — CI guardrails
+## 8. Phase 8 — CI guardrails ⏸️ DEFERRED to follow-up change
 
-- [ ] 8.1 Add `lighthouse-ci` (or equivalent action) to `.github/workflows/deploy.yml` so it runs against a representative post URL after build
-- [ ] 8.2 Configure thresholds Accessibility ≥ 95, SEO ≥ 95, Performance ≥ 95 — CI fails if any below
-- [ ] 8.3 Add a bundle-size check (rollup-plugin-visualizer / source-map-explorer / `size-limit`) that fails CI if sidebar-related gzipped JS exceeds the cap decided in 1.3
-- [ ] 8.4 Document both CI gates in `README.md` under a new「Quality gates」section
-- [ ] 8.5 Run one CI cycle locally (or via a draft PR) to confirm gates fire correctly when intentionally broken
+**Deferred to `add-quality-gates-ci` follow-up change** (user decision 2026-06-10). Rationale: CI enforcement is a cross-cutting infrastructure concern, not part of the desktop-sidebar UI feature; cleaner to spec + implement separately. Spec Requirements 10 (JS bundle cap) and 11 (Lighthouse ≥ 95) **remain as constraints** — they describe what the system SHALL achieve; the `add-quality-gates-ci` change will add the CI capability that enforces them.
+
+- [ ] ~~8.1 Add `lighthouse-ci` action to `.github/workflows/deploy.yml`~~ → moved to follow-up change
+- [ ] ~~8.2 Configure thresholds Accessibility/SEO/Performance ≥ 95~~ → moved to follow-up change
+- [ ] ~~8.3 Add bundle-size check~~ → moved to follow-up change
+- [ ] ~~8.4 Document CI gates in `README.md`~~ → moved to follow-up change
+- [ ] ~~8.5 Run one CI cycle locally~~ → moved to follow-up change
+
+**Until CI lands**: Requirements 10 + 11 are enforced **manually** at deploy time. Maintainers must run `pnpm build` and check `dist/_astro/` for any unexpected `Sidebar*.js` chunk before merging sidebar-touching changes.
 
 ## 9. Phase 9 — `/opsx:verify` + manual review
 
