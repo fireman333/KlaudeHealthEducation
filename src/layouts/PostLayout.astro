@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Sidebar from '@/components/Sidebar.astro';
 import { CommentBox } from '@/components/react/CommentBox';
 import { COMMENTS } from '@/config';
 
@@ -47,8 +48,9 @@ function categoryHref(c: string): string {
 ---
 
 <BaseLayout title={title} description={description ?? summary}>
-  <article class="container">
-    <header class="article-header">
+  <div class="post-layout">
+    <article class="post-layout__main">
+      <header class="article-header">
       {categories.length > 0 && (
         <div class="article-categories">
           {categories.map((c) => (
@@ -113,5 +115,15 @@ function categoryHref(c: string): string {
       apiBase={COMMENTS.apiBase}
       turnstileSiteKey={COMMENTS.turnstileSiteKey}
     />
-  </article>
+    </article>
+
+    <aside class="post-layout__sidebar post-layout__sidebar--desktop" aria-label="文章導覽">
+      <Sidebar />
+    </aside>
+  </div>
+
+  <details class="post-layout__sidebar-mobile">
+    <summary class="post-layout__sidebar-summary">瀏覽其他文章</summary>
+    <Sidebar />
+  </details>
 </BaseLayout>

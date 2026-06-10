@@ -101,6 +101,68 @@ pnpm build     # = astro check && astro build
 - **內容**（`src/content/posts/`、`src/pages/about.md`）：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-Hant)
 - **程式碼**（`src/layouts/`、`src/styles/`、`astro.config.mjs` 等）：MIT
 
+## Quality gates
+
+`main` 上線靠 GitHub Actions 兩道閘。任何 PR / push 觸碰 Astro build 都會跑 [`.github/workflows/quality-gates.yml`](.github/workflows/quality-gates.yml)：
+
+### Gate 1 — Bundle size
+
+工具：[`size-limit`](https://github.com/ai/size-limit)（config 在 [`.size-limit.cjs`](./.size-limit.cjs)）。
+
+| 閾值 | 對象 | 觸發條件 |
+|---|---|---|
+| **5 KB gzipped** | per chunk `dist/_astro/Sidebar*.js` | 任何一個 Sidebar client island 超過即 fail |
+| **55 KB gzipped** | 所有 `dist/_astro/*.js` 加總 | 整體 client JS 漂移超過即 fail |
+
+當前 baseline ≈ 49 KB gzipped（CommentBox React island + Astro hydration runtime + Astro internal index）。55 KB 留 ~6 KB headroom 吸收 Astro patch bump。
+
+Sidebar per-chunk rule 是 **conditional**：MVP 沒 `Sidebar*.js` 時自動 skip，未來新增 island 時自動啟用。
+
+本機驗證：
+
+```bash
+pnpm size
+```
+
+### Gate 2 — Lighthouse
+
+工具：[`treosh/lighthouse-ci-action@v12`](https://github.com/treosh/lighthouse-ci-action)（config 在 [`lighthouserc.json`](./lighthouserc.json)）。
+
+對象：代表性 post URL `/posts/2026-05-11-daraxonrasib-pancreatic-cancer-ras-on/`（最新文、Pinned + Timeline 兩 section 都長）。
+
+跑 mobile profile（slow-4G + 4× CPU throttle）3 次取 median。閾值：
+
+| 類別 | minScore | 目前 median |
+|---|---|---|
+| Accessibility | 0.95 | 0.96 |
+| SEO | 0.95 | 1.00 |
+| Performance | **0.50** | local 0.72 / CI 0.55–0.65 |
+
+> Performance 50 是 **mobile baseline floor**，不是目標。原 desktop-sidebar Req 11 設 95 是 aspirational、從未實測。Apply phase 三階段量出來：local Mac 72、CI run 1 best 0.65、CI run 2 best 0.55（同 SHA、13 pt swing）。GH Actions shared runner CPU 對 Lighthouse Perf 影響大、flake 風險高。50 設在觀察到的最差 best-of-3 之下、給 ~5 pt buffer。主因 LCP 7.4 s + FCP 2.9 s（中文字型載入 + React island block render），後續 `improve-mobile-performance` 從根本處理、不再下修 floor。
+
+Best Practices 不收（第三方資源誤判率高）。PWA category 不適用。
+
+本機驗證：
+
+```bash
+pnpm lighthouse:local
+```
+
+### 調整閾值
+
+任何閾值**不可在 PR 裡 silently 改數字**。要調整 → 開新 OpenSpec change 改 `openspec/specs/quality-gates-ci/spec.md`（或 `openspec/specs/desktop-sidebar/spec.md` 若動到 Req 11），proposal 寫清楚理由，apply 後再改 config 數字。Normative source = OpenSpec spec，不是 README 表格、不是 `.size-limit.cjs` const、不是 `lighthouserc.json` 數字。
+
+### Branch protection（maintainer 必設）
+
+GitHub repo Settings → Branches → `main` branch protection rule，加 required status check：
+
+- `Quality gates / Bundle size`
+- `Quality gates / Lighthouse`
+
+設定 URL：https://github.com/fireman333/KlaudeHealthEducation/settings/branches
+
+沒設 = 即使 quality-gates 紅燈也能 merge，等於 gate 失效。
+
 ## 重要聲明
 
 ⚠ 本站文章為衛教科普目的，**不構成個別醫療建議**。實際治療決策請與您的主治醫師討論。
