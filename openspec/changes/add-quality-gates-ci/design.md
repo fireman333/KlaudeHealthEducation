@@ -98,7 +98,10 @@ Stakeholders：本專案唯一使用者 / 唯一 maintainer = 作者 WLK。
 - A11y / SEO / Perf 是 Req 11 點名的三個，照單全收
 - Best Practices 常因第三方資源（CommentBox 載 Turnstile / 未來 analytics）扣分，誤報率高、不適合 hard gate
 - LH 的 PWA category 在 v12 已 deprecated，本站不是 PWA 也不打算改 PWA
-- **Apply 實測校正**：原 design 假設三項皆 ≥ 95，apply phase 跑出 mobile Performance = **55 / 72 / 72**（三 run、median 72），dominated by LCP 7.4 s + FCP 2.9 s（中文字型載入 + 43 KB React island block render）。A11y = 96、SEO = 100 都過 95。**Perf 95 是 desktop-sidebar 原 spec aspirational wording，從未實測**；強訂 95 mobile 會 launch day 就紅。改成 **mobile baseline 70**（爛不過今天的下限），並把 desktop-sidebar Req 11 MODIFIED 進本 change 的 spec delta 同步寫死；同時 queue 一個 `improve-mobile-performance` follow-up change 處理 LCP / FCP 根因（lazy CommentBox island、font subset、inline critical CSS）
+- **Apply 實測校正（兩階段）**：
+  - **第一次（local Mac）**：3 runs = 55 / 72 / 72，median 72。原 95 aspirational、從未實測；改成 70 mobile baseline 與 MODIFIED Req 11
+  - **第二次（GH Actions ubuntu-latest CI runner）**：3 runs = 52 / 55 / 65，best 0.65、median 0.55。CI runner CPU 比 Mac 慢，相同 throttling 設定下 score 系統性低 ~10 pt。70 threshold launch day 就紅。**再下修到 60 mobile baseline floor**：給 CI 約 5 pt buffer、仍能 catch ≥ 10 pt regression。Root cause（LCP 7.4 s + FCP 2.9 s）同前；queue `improve-mobile-performance` 處理 lazy CommentBox / font subset / inline critical CSS
+- **教訓**：threshold rationale 必須先在 CI runner 量過、不能只靠 dev hardware。Mac M-series chip 是 vanity baseline，CI 是 enforceable baseline
 
 **Alternatives**：
 - 收 Best Practices — 高誤報率
