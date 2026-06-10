@@ -18,7 +18,7 @@
 - **Frontend**: Astro 5 + React 18 islands、TypeScript 5、pnpm 9
 - **Content**: Markdown with zod-validated frontmatter（`src/content/posts/<YYYY-MM-DD-slug>.md`）
 - **Comments API**: Cloudflare Workers + D1（獨立 sub-project `comments-api/`，含 wrangler.toml + migrations/）
-- **Deploy**: push to `main` → GitHub Actions → GitHub Pages（`https://fireman333.github.io/KlaudeHealthEducation/`）
+- **Deploy**: push to `main` → GitHub Actions → `wrangler pages deploy` → Cloudflare Pages，經 router Worker 服務於 `https://med-study-rpg.com/klaudehealthedu/`（subpath 共享 `med-study-rpg.com`，root 與 `/2nd` 是其他 app）
 - **Build**: `astro check && astro build`（zod schema + TypeScript check + 靜態頁生成）
 - **Design system**: 嚴守 `DESIGN.md` — light theme only、serif body / sans UI、sage accent、680px max content width、Chinese line-height ≥ 1.85
 - **License**: 內容 CC BY-NC-SA 4.0、程式碼 MIT
@@ -58,7 +58,7 @@
 
 ## Deploy & Distribution
 
-- **讀者取得**：直接讀 `https://fireman333.github.io/KlaudeHealthEducation/`（未來可能換自訂網域，DNS + CNAME 流程見 README §自訂網域）
+- **讀者取得**：直接讀 `https://med-study-rpg.com/klaudehealthedu/`（Cloudflare subpath 部署架構見 README §部署架構；舊 `https://fireman333.github.io/KlaudeHealthEducation/` 近似 301 導向新網址）
 - **作者更新流程**：
   1. 用 `klaude-healthedu` skill 產文 + 圖
   2. 存到 `src/content/posts/YYYY-MM-DD-slug.md`

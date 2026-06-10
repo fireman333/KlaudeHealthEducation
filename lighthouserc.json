@@ -3,7 +3,7 @@
     "collect": {
       "staticDistDir": "./.lh-serve",
       "url": [
-        "http://localhost/KlaudeHealthEducation/posts/2026-05-11-daraxonrasib-pancreatic-cancer-ras-on/"
+        "http://localhost/klaudehealthedu/posts/2026-05-11-daraxonrasib-pancreatic-cancer-ras-on/"
       ],
       "numberOfRuns": 3,
       "settings": {

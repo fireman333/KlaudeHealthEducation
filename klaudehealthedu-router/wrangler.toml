@@ -1,0 +1,15 @@
+name = "klaudehealthedu-router"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+# Reverse-proxy the Klaude Health Education site (deployed as the dedicated
+# Cloudflare Pages project `klaudehealthedu`) under the shared subpath on
+# med-study-rpg.com. Two patterns so the bare prefix AND everything beneath it
+# reach this Worker (Cloudflare's `/foo/*` glob does not match bare `/foo`).
+routes = [
+  { pattern = "med-study-rpg.com/klaudehealthedu", zone_name = "med-study-rpg.com" },
+  { pattern = "med-study-rpg.com/klaudehealthedu/*", zone_name = "med-study-rpg.com" },
+]
+
+[observability]
+enabled = true

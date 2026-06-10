@@ -18,7 +18,7 @@ const canonicalUrl =
   canonical ?? new URL(Astro.url.pathname, Astro.site ?? SITE.url).href;
 // og may be either an absolute URL or a path relative to the site root.
 // Path-only values must be prefixed with BASE_URL so the OG image resolves
-// inside the project pages subpath (/KlaudeHealthEducation/...).
+// inside the project pages subpath (/klaudehealthedu/...).
 const ogPath = og.startsWith('http')
   ? og
   : `${import.meta.env.BASE_URL}${og}`.replace(/([^:])\/\/+/g, '$1/');

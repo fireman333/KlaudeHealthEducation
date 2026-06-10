@@ -1,4 +1,4 @@
-name: Deploy Astro to GitHub Pages
+name: Deploy Astro to Cloudflare Pages
 
 on:
   push:
@@ -7,16 +7,14 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: deploy-cloudflare-pages
   cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,24 +42,28 @@ jobs:
           # variables → Actions → Variables tab) so they're injected at
           # build time. Leaving them unset falls back to local-dev defaults
           # in src/config.ts (Turnstile always-passes test key + localhost
-          # API), which keeps Pages renderable even before the v2 backend
+          # API), which keeps pages renderable even before the v2 backend
           # is deployed.
           PUBLIC_COMMENTS_API: ${{ vars.PUBLIC_COMMENTS_API }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
+      # Astro emits files at dist/ root, but their internal links point to
+      # /klaudehealthedu/*. Cloudflare Pages serves the uploaded dir at the
+      # project root, so wrap dist under a klaudehealthedu/ folder — then
+      # klaudehealthedu.pages.dev/klaudehealthedu/* resolves and the router
+      # Worker (which forwards the pathname unchanged) finds it. Mirrors the
+      # lighthouse:prep .lh-serve trick.
+      - name: Prepare Pages deploy directory
+        run: pnpm pages:prep
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # Direct-upload to the dedicated `klaudehealthedu` Pages project. The
+      # project is served under med-study-rpg.com/klaudehealthedu via the
+      # klaudehealthedu-router Worker. Requires the CLOUDFLARE_API_TOKEN repo
+      # secret (Account → Cloudflare Pages → Edit). Account id is an
+      # identifier, not a secret, so it is inlined.
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 43631a35f33f4132484a6ce024cc502a
+          command: pages deploy .cf-deploy --project-name=klaudehealthedu --branch=main
