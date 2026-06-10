@@ -5,8 +5,8 @@ export const SITE = {
     '以 Claude Code 與 OpenEvidence 等 AI 工具為輔助，整理具實證基礎的繁體中文醫學科普文章。每篇文章標註資料來源，立場僅供參考，臨床決策仍以個別病人主治醫師判斷為準。',
   author: '康瑋麟（WLK）',
   lang: 'zh-Hant-TW',
-  url: 'https://fireman333.github.io',
-  base: '/KlaudeHealthEducation',
+  url: 'https://med-study-rpg.com',
+  base: '/klaudehealthedu',
   ogImage: 'og-default.png',
 } as const;
 

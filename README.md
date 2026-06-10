@@ -2,14 +2,14 @@
 
 繁體中文醫學科普文集，由台大醫學生 WLK 撰寫，以 Claude Code + OpenEvidence + NCCN guideline 等實證為基礎。
 
-🌐 線上閱讀：https://fireman333.github.io/KlaudeHealthEducation/
+🌐 線上閱讀：https://med-study-rpg.com/klaudehealthedu/
 
 ## 技術堆疊
 
 - **Astro 5** — static site generator with Content Collections + zod schema 驗證
 - **React 18** — island framework（v2 reader interaction 用）
 - **pnpm 9** — package manager
-- **GitHub Actions → GitHub Pages** — push 到 `main` 自動 build + deploy
+- **GitHub Actions → Cloudflare Pages** — push 到 `main` 自動 build + `wrangler pages deploy`，經 router Worker 服務於 `med-study-rpg.com/klaudehealthedu`
 
 ## 結構
 
@@ -54,15 +54,15 @@
 2. 存為 `src/content/posts/YYYY-MM-DD-slug.md`（檔名 date 必須與 frontmatter 一致）
 3. （建議）`pnpm build` 本機驗證 zod schema 過得了
 4. `git commit && git push`
-5. GitHub Actions 約 2-3 分鐘 build + deploy
+5. GitHub Actions 約 2-3 分鐘 build + `wrangler pages deploy` 到 Cloudflare Pages
 
-URL 1:1 從檔名推 — `2026-05-10-foo.md` → `/posts/2026-05-10-foo/`。
+URL 1:1 從檔名推 — `2026-05-10-foo.md` → `/klaudehealthedu/posts/2026-05-10-foo/`。
 
 ## 本地預覽
 
 ```bash
 pnpm install   # 第一次安裝
-pnpm dev       # http://localhost:4321/KlaudeHealthEducation/
+pnpm dev       # http://localhost:4321/klaudehealthedu/
 ```
 
 熱更新：存檔後瀏覽器自動 refresh。
@@ -87,14 +87,15 @@ pnpm build     # = astro check && astro build
 
 完整風格規範參考 Claude Code skill `wlk-public-writing-style`（私有，未公開）。
 
-## 自訂網域（未來）
+## 部署架構（Cloudflare subpath）
 
-若要綁定自訂網域：
+站點以 subpath 形式跟其他 app 共用 `med-study-rpg.com`（root 是「醫師國考養成 RPG」、`/2nd` 是另一支 app），路由方式照 `/2nd` 既有 pattern：
 
-1. 在 `public/` 放一個 `CNAME` 檔案，內容是你的網域
-2. 在網域 DNS 加 CNAME 紀錄指向 `fireman333.github.io`
-3. 在 GitHub repo Settings → Pages 啟用 HTTPS
-4. 改 `astro.config.mjs` 的 `site` 與 `base`
+1. **Cloudflare Pages project `klaudehealthedu`** — `wrangler pages deploy` 把 `dist` 包進 `klaudehealthedu/` 子目錄上傳（`pnpm pages:prep` 產生 `.cf-deploy/`），origin 為 `klaudehealthedu.pages.dev`
+2. **Router Worker `klaudehealthedu-router/`** — route `med-study-rpg.com/klaudehealthedu` + `/klaudehealthedu/*` reverse-proxy 到 Pages origin（pathname 原封轉發、`x-served-by: edge-router-khe`），優先權高於 root 的 Pages custom domain
+3. **CI** — `.github/workflows/deploy.yml` 用 `cloudflare/wrangler-action`，需 repo secret `CLOUDFLARE_API_TOKEN`（Account ＞ Cloudflare Pages ＞ Edit）；`PUBLIC_COMMENTS_API` / `PUBLIC_TURNSTILE_SITE_KEY` 走 repo Variables 注入
+
+改 base path 時要同步四處：`astro.config.mjs`、`package.json` 的 `pages:prep` 與 `lighthouse:prep`、`lighthouserc.json`。
 
 ## 授權
 

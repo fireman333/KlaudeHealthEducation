@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "size": "astro build && size-limit",
-    "lighthouse:prep": "rm -rf .lh-serve && mkdir -p .lh-serve && cp -R dist .lh-serve/KlaudeHealthEducation",
+    "lighthouse:prep": "rm -rf .lh-serve && mkdir -p .lh-serve && cp -R dist .lh-serve/klaudehealthedu",
+    "pages:prep": "rm -rf .cf-deploy && mkdir -p .cf-deploy/klaudehealthedu && cp -R dist/. .cf-deploy/klaudehealthedu/",
     "lighthouse:local": "astro build && pnpm lighthouse:prep && lhci autorun --config=lighthouserc.json --upload.target=filesystem --upload.outputDir=.lighthouseci"
   },
   "dependencies": {

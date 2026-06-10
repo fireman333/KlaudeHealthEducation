@@ -28,3 +28,13 @@ Gemfile.lock
 # Quality gates (generated locally)
 .lh-serve/
 .lighthouseci/
+
+# Cloudflare Pages deploy staging (dist wrapped under /klaudehealthedu)
+.cf-deploy/
+
+# Old GH Pages redirect site (generated; pushed to gh-pages branch)
+redirect-site/
+
+# D1 backups — contain user PII (emails, sessions). NEVER commit.
+backup/
+*.sql

@@ -18,8 +18,11 @@ binding = "AI"
 # Public env vars (available at runtime via env.X)
 [vars]
 ADMIN_EMAILS = "tony85314@gmail.com"
-ALLOWED_ORIGINS = "https://fireman333.github.io,http://localhost:4321,http://127.0.0.1:4321"
-SITE_URL = "https://fireman333.github.io/KlaudeHealthEducation"
+# Dual-origin during migration: new med-study-rpg.com domain first, old gh.io
+# kept so links already in the wild (and the redirect window) don't CORS-fail.
+# Drop the gh.io origin once the new site is confirmed stable (follow-up).
+ALLOWED_ORIGINS = "https://med-study-rpg.com,https://fireman333.github.io,http://localhost:4321,http://127.0.0.1:4321"
+SITE_URL = "https://med-study-rpg.com/klaudehealthedu"
 ADMIN_BASE_URL = "https://klaude-comments.tony85314.workers.dev"
 SESSION_TTL_DAYS = "7"
 MAGIC_LINK_TTL_MIN = "10"
