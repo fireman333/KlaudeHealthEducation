@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Sidebar from '@/components/Sidebar.astro';
 import { CommentBox } from '@/components/react/CommentBox';
+import { SidebarFailureTest } from '@/components/react/SidebarFailureTest';
 import { COMMENTS } from '@/config';
 
 interface Source {
@@ -115,6 +116,7 @@ function categoryHref(c: string): string {
       apiBase={COMMENTS.apiBase}
       turnstileSiteKey={COMMENTS.turnstileSiteKey}
     />
+    <SidebarFailureTest client:load />
     </article>
 
     <aside class="post-layout__sidebar post-layout__sidebar--desktop" aria-label="文章導覽">
