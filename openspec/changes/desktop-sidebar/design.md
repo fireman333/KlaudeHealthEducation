@@ -101,16 +101,26 @@
 - `featured: 'pinned' | 'normal'` enum — 過度設計
 - 不加 frontmatter，用 tag `#pinned` — tag 系統用途混淆（tag 是內容分類，pinned 是顯示控制）
 
-### D6: Performance hard cap — JS bundle ≤ 30 KB gzipped
+### D6: Performance hard cap — sidebar 新增 chunk ≤ 5 KB gzipped；MVP 零 client JS
 
-**選擇**：sidebar 相關 JS / Astro island 總 gzipped size ≤ 30 KB。CI 跑 bundle-size check。
+**選擇**：
+- MVP sidebar 完全 server-rendered Astro component，**新增 0 KB** 到 client JS bundle
+- 若未來（例：Popular Phase 2）引入 sidebar client island，**新 chunk gzipped ≤ 5 KB**
+- CI gate：監控 `dist/_astro/Sidebar*.js` chunk 是否出現 + size 上限
 
-**Why**：
-- 中文長文閱讀體驗是首要 NFR — JS bloat 直接傷 mobile FCP / TTI
-- 30 KB 是「夠 React island 做 client-side filter 但禁不起放整套 framework」的 sweet spot
-- 鑒於 D1 mobile 走 CSS-only，desktop sidebar 預期接近 0 JS（除非 Popular 區塊未來需 client filter）
+**Why**（已用 baseline 校準，2026-06-10）：
+- **`pnpm build` baseline 結果**：Total JS gzipped = 48.6 KB；其中 `client.*.js` (React + ReactDOM runtime) = 44 KB、CommentBox island = 2.8 KB、Astro hydration glue = 2.7 KB
+- 原本 spec 寫的 30 KB 絕對 cap 在這 baseline 下無意義（光 React runtime 就 44 KB），會 false-positive 擋 CI
+- 改成「sidebar 新增 chunk」delta cap 對齊 D1（mobile CSS-only `<details>`）：server-rendered Astro component 預期 = 0 KB 新 JS
+- 5 KB 的 chunk 預算可容納小型 client-side filter / sort 邏輯（例 Popular section 內部 sort），但禁不起另一個整套 framework
 
-**Open**：30 KB 是否合理需 baseline `pnpm build` 量現有 bundle 才知道。如果現有已 50 KB，30 KB 增量是 +60%（過鬆）；如果現有 5 KB，30 KB 是 6×（過緊）。tasks.md Phase 1 第一個 task 就是量這個。
+**Alternatives considered**：
+- 絕對 30 KB cap — 在 baseline 48.6 KB 下變成 over-budget 18.6 KB，CI 直接紅；廢
+- 絕對 60 KB cap（baseline + 10 KB）— 過鬆，sidebar 完全可以塞個 jQuery 進去都不會擋
+- delta 10 KB — 過鬆，鼓勵 client island 濫用；MVP 不需要
+- delta 0 KB hard — 完全禁 client JS，但 Phase 2 Popular section 可能需要小 island 做 client filter；過嚴
+
+**Trade-off**：用 chunk-level 監控（而非總 bundle）依賴 Astro 的 code splitting — 若未來 Astro 改 chunking 策略可能 sidebar code 被 inline 進共享 chunk 而無法量測。Mitigation：CI 同時量總 JS gzipped delta 作為兜底（若 sidebar code 被 inline，baseline 會漲）。
 
 ### D7: Popular 區塊 comments-api integration — defer to Phase 2 with re-spec
 

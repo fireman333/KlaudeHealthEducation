@@ -262,3 +262,63 @@ When asked to build a component, default to:
 - Spacing: prefer the 8px scale; pad article body with 24-32px breathing room between blocks
 
 When in doubt: **make it look like an editorial article in a thoughtful magazine, not an app screen.**
+
+---
+
+## 9. Sidebar Chrome Rules
+
+Sidebar (desktop ≥ 1024 px) and its mobile fallback (`<details>/<summary>` push-down toggle) follow these rules. They extend §6 (Do / Don't) and never relax it — every rule below is additive.
+
+### Typography
+
+- Sidebar text uses **sans-serif** (`var(--font-sans)`), never body serif — sidebar is navigational chrome, not prose
+- Section headings (Pinned / Timeline / Popular): Sans 14–15px weight 600, color `var(--color-text-muted)`, optional `letter-spacing: 0.02em`
+- Item titles (post links): Sans 15px weight 500, color `var(--color-text)`
+- Item dates / metadata: Sans 13px weight 400, color `var(--color-text-subtle)`
+- Placeholder copy「還沒釘選任何文章」: Sans 14px italic, color `var(--color-text-muted)`
+
+### Layout & spacing
+
+- Sidebar column max-width: **240 px** on desktop; never compresses the 680 px article column
+- Sidebar item vertical padding: 12 px; section spacing 24 px (uses 8 px scale)
+- Section dividers: `1px solid var(--color-border)` hairline only — no shadow, no double rules
+- Item touch target: ≥ 44 × 44 px on mobile (when expanded), enforced via padding not min-height
+
+### Links
+
+- Sidebar item links use the same sage underline pattern as inline links: `color: var(--color-link); text-decoration-color: var(--color-sage-200); text-decoration-thickness: 1.5px; text-underline-offset: 3px`
+- Hover: `text-decoration-color: currentColor` — never blue, never bold-on-hover
+
+### Forbidden chrome (re-asserting §6 Don't)
+
+- No `box-shadow` (not even sage-tinted soft shadow)
+- No `border-radius` ≥ 100 px (no pill shape)
+- No `color: #000` or `background: #fff` explicitly
+- No `font-weight: 700` for sidebar body text (max 600 for headings)
+- No emoji decorative chrome in section headings (e.g. ❌ no「⭐ Pinned」— just「Pinned」or「精選」)
+
+### Animation exception (only one allowed)
+
+- The **native HTML `<details>` element's default toggle behavior** is allowed on mobile sidebar — it is browser-native semantics, not custom animation
+- All custom CSS `transition` and `animation` properties applied to sidebar elements are **forbidden**
+- No `details[open] { transition: ... }` overrides; no JS-driven open/close
+
+### Mobile `<details>` rules
+
+- Default state: closed
+- Open behavior: pushes article content downward inline; never `position: fixed` / `absolute` / overlay / backdrop
+- `<summary>` tap target: minimum 44 × 44 px; sans-serif weight 500
+- No chevron animation; if a triangle indicator is shown, use the browser default
+
+### Quick reference (sidebar-only addendum to §8)
+
+When asked to add or modify a sidebar component:
+- `font-family: var(--font-sans)` (override §8 default of serif-for-prose)
+- Section heading `font-size: 14px; font-weight: 600; color: var(--color-text-muted)`
+- Item link `color: var(--color-link)`; sage 1.5px underline only
+- Max-width: 240px
+- Spacing: 12px item padding, 24px section gap (8px scale)
+- Border: 1px hairline only, never shadow
+- Mobile: wrap in `<details>`; zero JS, zero CSS transition / animation
+
+When in doubt: **the sidebar should feel like a typeset table of contents in a magazine, not an app navigation drawer.**

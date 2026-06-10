@@ -154,18 +154,22 @@ The sidebar's visual chrome SHALL satisfy all 8 DESIGN.md rules: no `box-shadow`
 
 ---
 
-### Requirement: Sidebar-related JavaScript bundle SHALL NOT exceed 30 KB gzipped
+### Requirement: Sidebar SHALL contribute zero new client-side JavaScript in MVP and bound future additions
 
-The total gzipped size of JavaScript and Astro client islands attributable to the sidebar feature SHALL NOT exceed 30 KB. CI SHALL fail the build if the cap is exceeded.
+The sidebar component SHALL be implemented as a server-rendered Astro component for MVP, contributing zero bytes to the client-side JavaScript bundle. If a future change introduces a client-side Astro island for any sidebar section (e.g., Popular section sort/filter), the new chunk's gzipped size SHALL NOT exceed 5 KB. CI SHALL measure both: (a) presence of any `Sidebar*.js` chunk in `dist/_astro/`, and (b) total client JS gzipped size delta against a recorded baseline.
 
-#### Scenario: Bundle within cap passes CI
-- **WHEN** the production build produces a JavaScript bundle for the sidebar feature
-- **THEN** the gzipped size SHALL be measured and compared against the 30 KB cap
-- **AND** if size ≤ 30 KB the CI step SHALL succeed
+#### Scenario: MVP sidebar produces no Sidebar chunk
+- **WHEN** the production build (`pnpm build`) completes for the MVP sidebar feature
+- **THEN** there SHALL be no file matching `dist/_astro/Sidebar*.js`
+- **AND** the total client JS gzipped size SHALL not exceed the recorded pre-sidebar baseline plus a 1 KB tolerance (allowing for minor Astro internal additions)
 
-#### Scenario: Bundle exceeds cap fails CI
-- **WHEN** the gzipped sidebar JS bundle exceeds 30 KB
-- **THEN** the CI step SHALL fail with a clear error message identifying the cap and the actual measured size
+#### Scenario: Future sidebar island within 5 KB chunk cap passes CI
+- **WHEN** a future change adds a sidebar client island AND the resulting `dist/_astro/Sidebar*.js` chunk is ≤ 5 KB gzipped
+- **THEN** the CI bundle-size step SHALL succeed
+
+#### Scenario: Future sidebar island exceeds 5 KB chunk cap fails CI
+- **WHEN** a sidebar client island produces a chunk > 5 KB gzipped
+- **THEN** CI SHALL fail with a clear error message identifying the chunk filename, the 5 KB cap, and the actual measured size
 - **AND** the build SHALL NOT be deployed
 
 ---

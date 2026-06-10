@@ -31,6 +31,7 @@ const posts = defineCollection({
     disease: z.string().optional(),
     treatment: z.string().optional(),
     draft: z.boolean().default(false),
+    pinned: z.boolean().default(false),
   }),
 });
 

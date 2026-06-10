@@ -612,3 +612,177 @@ hr {
     flex-basis: 420px;
   }
 }
+
+/* ---------- Post layout (article + sidebar grid) ---------- */
+/* Mobile (default): single column, behaves like .container did before */
+.post-layout {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .post-layout { padding: 0 32px; }
+}
+
+/* Desktop ≥1024px — two-column grid: article 680px + sidebar 240px */
+@media (min-width: 1024px) {
+  .post-layout {
+    display: grid;
+    grid-template-columns: minmax(0, var(--content-max)) 240px;
+    column-gap: var(--space-7);
+    max-width: 1000px;
+    align-items: start;
+  }
+  .post-layout__main { min-width: 0; }
+  .post-layout__sidebar--desktop { display: block; }
+  .post-layout__sidebar-mobile { display: none; }
+}
+
+/* Mobile/tablet <1024px — hide desktop sidebar slot */
+@media (max-width: 1023.98px) {
+  .post-layout__sidebar--desktop { display: none; }
+}
+
+/* Mobile <details> wrapper — strict no-animation per DESIGN.md §9 Animation exception */
+.post-layout__sidebar-mobile,
+.post-layout__sidebar-mobile *,
+.post-layout__sidebar-summary {
+  transition: none !important;
+  animation: none !important;
+}
+
+.post-layout__sidebar-mobile {
+  max-width: var(--content-max);
+  margin: 0 auto var(--space-7);
+  padding: 0 20px;
+  font-family: var(--font-sans);
+}
+
+@media (min-width: 768px) {
+  .post-layout__sidebar-mobile { padding: 0 32px; }
+}
+
+.post-layout__sidebar-summary {
+  cursor: pointer;
+  padding: 12px var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 20px;
+  min-height: 44px;
+  /* keep native <summary> display semantics so click toggles open/close
+     (using display: flex on <summary> breaks Chromium toggle, known quirk) */
+}
+
+.post-layout__sidebar-summary:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+
+.post-layout__sidebar-mobile[open] .post-layout__sidebar-summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.post-layout__sidebar-mobile[open] .sidebar {
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* ---------- Sidebar (DESIGN.md §9 Sidebar Chrome Rules) ---------- */
+.sidebar {
+  font-family: var(--font-sans);
+}
+
+.sidebar-section {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+}
+
+.sidebar-section__heading {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-3);
+  text-transform: none;
+}
+
+.sidebar-section__placeholder {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.sidebar-section__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sidebar-section__item-link {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: var(--color-sage-200);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  min-height: 44px;
+  padding: 6px 0;
+}
+
+.sidebar-section__item-link:hover {
+  text-decoration-color: currentColor;
+}
+
+.sidebar-section__item-date {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-subtle);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sidebar-timeline__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sidebar-timeline__heading {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
