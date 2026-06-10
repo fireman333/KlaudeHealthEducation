@@ -98,10 +98,14 @@ Stakeholders：本專案唯一使用者 / 唯一 maintainer = 作者 WLK。
 - A11y / SEO / Perf 是 Req 11 點名的三個，照單全收
 - Best Practices 常因第三方資源（CommentBox 載 Turnstile / 未來 analytics）扣分，誤報率高、不適合 hard gate
 - LH 的 PWA category 在 v12 已 deprecated，本站不是 PWA 也不打算改 PWA
-- **Apply 實測校正（兩階段）**：
+- **Apply 實測校正（三階段）**：
   - **第一次（local Mac）**：3 runs = 55 / 72 / 72，median 72。原 95 aspirational、從未實測；改成 70 mobile baseline 與 MODIFIED Req 11
-  - **第二次（GH Actions ubuntu-latest CI runner）**：3 runs = 52 / 55 / 65，best 0.65、median 0.55。CI runner CPU 比 Mac 慢，相同 throttling 設定下 score 系統性低 ~10 pt。70 threshold launch day 就紅。**再下修到 60 mobile baseline floor**：給 CI 約 5 pt buffer、仍能 catch ≥ 10 pt regression。Root cause（LCP 7.4 s + FCP 2.9 s）同前；queue `improve-mobile-performance` 處理 lazy CommentBox / font subset / inline critical CSS
-- **教訓**：threshold rationale 必須先在 CI runner 量過、不能只靠 dev hardware。Mac M-series chip 是 vanity baseline，CI 是 enforceable baseline
+  - **第二次（GH Actions ubuntu-latest CI runner，run 1）**：3 runs = 52 / 55 / 65，best 0.65、median 0.55。CI runner CPU 比 Mac 慢、相同 throttling 設定下 score 系統性低 ~10 pt。70 threshold launch day 就紅。**下修到 60 mobile baseline floor**
+  - **第三次（CI runner 同 SHA 立即 re-run）**：3 runs = 52 / 52 / 55，best **0.55**、median 0.52。同 code 兩次 CI run 的 best 從 0.65 → 0.55，**13 pt swing**，代表 GH Actions shared runner CPU 對 Lighthouse 影響大。**再下修到 50 mobile baseline floor**：給觀察到的最差 best run（0.55）約 5 pt buffer
+- **教訓**：
+  - threshold rationale 必須先在 CI runner 量過（不是 local Mac），且**至少跑兩次連續 run 觀察 variance**
+  - Mac M-series chip 是 vanity baseline、CI 是 enforceable baseline
+  - Lighthouse Perf 對 CI runner CPU 異常敏感，hard gate 設計 inherently 有 flake 風險（R1 + R5 已 capture）；50 floor 是「絕對下限」、不適合 ratchet 太多次
 
 **Alternatives**：
 - 收 Best Practices — 高誤報率
@@ -139,7 +143,7 @@ Stakeholders：本專案唯一使用者 / 唯一 maintainer = 作者 WLK。
 
 | Risk | Mitigation |
 |---|---|
-| R1: Lighthouse Performance 在 CI runner 抖動造成 false positive | lighthouserc.json 設 `numberOfRuns: 3` 取中位數；threshold 抓 95 不是 99，有 4 分緩衝 |
+| R1: Lighthouse Performance 在 CI runner 抖動造成 false positive | lighthouserc.json 設 `numberOfRuns: 3` + `aggregationMethod: optimistic`（取最佳跑）；threshold 抓 50 而不是 70/60，給觀察到的最差 best-of-3 (0.55) 約 5 pt 緩衝。**Apply 實測 confirmed risk**：同 SHA 兩次 CI run best 0.65 vs 0.55，13 pt swing。50 已是 enforceable 下限；再 flake 就只能改 warn 或加 numberOfRuns |
 | R2: GH Pages preview URL 跟 prod URL 不同（CI 跑 build artifact local server vs prod GH Pages） | CI 用 `npx http-server dist -p 4321 --silent` 跑 local static serve、Lighthouse 對 localhost；prod 行為差異透過 deploy 後手動 spot-check 補（不在 CI scope） |
 | R3: `size-limit` baseline 隨 Astro 版本升 silently 漂移 | total baseline 50 KB 留緩衝；超過時 maintainer 顯式 PR 改 baseline 並附 release note 連結（顯式 review，不假裝沒事） |
 | R4: PR contributor 沒辦法 re-run CI（單人 maintain，僅自己有寫權限） | 暫不解；單人 maintain 不會遇到。未來開 contribution 時加 instructions |

@@ -10,23 +10,31 @@ Apply phase 把 `add-quality-gates-ci` change 從紙上落地時撞出兩個原 
 
 **修法**：55 KB，~5.6 KB 緩衝。proposal / design D5 / spec / tasks 同步改完。
 
-## D2: Lighthouse Performance 95 → 70 → 60（兩階段下修）
+## D2: Lighthouse Performance 95 → 70 → 60 → 50（三階段下修）
 
-**第一次下修（local Mac 實測）**：3 runs Perf = 0.55 / 0.72 / 0.72（median 0.72）。
-**第二次下修（GH Actions ubuntu-latest CI runner 實測 PR #3 第一跑）**：3 runs Perf = 0.52 / 0.55 / 0.65（best 0.65, median 0.55）。
+**第一次下修（local Mac 實測）**：3 runs Perf = 0.55 / 0.72 / 0.72（median 0.72）→ threshold 0.70。
+**第二次下修（GH Actions ubuntu-latest CI runner，PR #3 run 1）**：3 runs Perf = 0.52 / 0.55 / 0.65（best 0.65, median 0.55）→ threshold 0.60。
+**第三次下修（CI runner，PR #3 run 2，同 SHA 立即 re-run）**：3 runs Perf = 0.52 / 0.52 / 0.55（best 0.55, median 0.52）→ threshold 0.50。
 
-A11y / SEO 兩端都 ≥ 95，沒問題。Perf 在 CI runner 比 Mac 慢 ~10 pt。
+**Variance 觀察**：同 SHA、同 workflow、相隔 ~6 min 的兩次 CI run，best-of-3 從 0.65 跌到 0.55，**13 pt swing**。GH Actions shared runner CPU 對 Lighthouse Perf score 影響極大。這是 hard gate 設計 inherent 的 flake 風險。
+
+A11y / SEO 兩端都穩定 ≥ 95、不變。
 
 主因：LCP 7.4 s（score 0.04）+ FCP 2.9 s（score 0.53）。源頭 = 中文字型載入 + 43 KB React island block render。
 
-**desktop-sidebar Req 11 原寫 95 是 aspirational、從未實測**。強訂 95 mobile = launch day 就 fail。70 在 local 通過但 CI 紅。60 在 CI 通過 + ~5 pt buffer + 仍能 catch ≥ 10 pt regression。
+**desktop-sidebar Req 11 原寫 95 是 aspirational、從未實測**。
 
 **修法**：
-- `lighthouserc.json` Performance assertion 0.95 → 0.70 → 0.60
-- `add-quality-gates-ci` 本 change 加 MODIFIED `desktop-sidebar` Req 11，Performance 從 ≥ 95 改 ≥ 60 mobile baseline floor
-- README §Quality gates 寫明「60 是 floor 不是目標、CI vs local 差異紀錄、follow-up `improve-mobile-performance` 會 ratchet 上去」
+- `lighthouserc.json` Performance assertion 0.95 → 0.70 → 0.60 → **0.50**
+- `add-quality-gates-ci` 本 change 加 MODIFIED `desktop-sidebar` Req 11，Performance 從 ≥ 95 改 ≥ 50 mobile baseline floor
+- README §Quality gates、design D6 + R1、所有 spec scenario 同步
+- 50 floor 是「絕對下限」、不適合再 ratchet 多次往下
 
-**Lesson**: threshold rationale 必須先在 CI runner 量過、不能只靠 dev hardware。Mac M-series chip 是 vanity baseline、CI 是 enforceable baseline。下次寫新的 Lighthouse-gated capability 要 first principles 從 CI 量起。
+**Lessons**:
+- threshold rationale 必須先在 CI runner 量過（非 local Mac）、且**至少跑兩次連續 run 觀察 variance**
+- Mac M-series chip 是 vanity baseline、CI 是 enforceable baseline
+- 同 SHA Lighthouse re-run 可能 ±10 pt 抖動 — 設 threshold 要假設「跑出來會比 best 更差」、不能用第一跑的 best 當 reference
+- Hard gate + Lighthouse Perf 本質上有 tension；接受 50 floor flake 風險、後續 `improve-mobile-performance` 從根本（LCP/FCP）解決而不是改 gate
 
 **Capability impact**：`add-quality-gates-ci` 從「無 Modified Capabilities」變成「Modified: desktop-sidebar」。proposal Capabilities 區段已同步。
 

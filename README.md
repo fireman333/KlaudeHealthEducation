@@ -136,9 +136,9 @@ pnpm size
 |---|---|---|
 | Accessibility | 0.95 | 0.96 |
 | SEO | 0.95 | 1.00 |
-| Performance | **0.60** | local 0.72 / CI 0.65 |
+| Performance | **0.50** | local 0.72 / CI 0.55–0.65 |
 
-> Performance 60 是 **mobile baseline floor**，不是目標。原 desktop-sidebar Req 11 設 95 是 aspirational、從未實測；apply phase 量出來 mobile 主因 LCP 7.4 s + FCP 2.9 s（中文字型載入 + React island block render）。CI runner（GH Actions ubuntu-latest）比 Mac 慢 ~10 pt，所以 CI 量得到的 floor 比 local 低。60 給 CI 約 5 pt buffer、仍能 catch ≥ 10 pt regression。後續 `improve-mobile-performance` change 會把 floor 往上拉。
+> Performance 50 是 **mobile baseline floor**，不是目標。原 desktop-sidebar Req 11 設 95 是 aspirational、從未實測。Apply phase 三階段量出來：local Mac 72、CI run 1 best 0.65、CI run 2 best 0.55（同 SHA、13 pt swing）。GH Actions shared runner CPU 對 Lighthouse Perf 影響大、flake 風險高。50 設在觀察到的最差 best-of-3 之下、給 ~5 pt buffer。主因 LCP 7.4 s + FCP 2.9 s（中文字型載入 + React island block render），後續 `improve-mobile-performance` 從根本處理、不再下修 floor。
 
 Best Practices 不收（第三方資源誤判率高）。PWA category 不適用。
 
